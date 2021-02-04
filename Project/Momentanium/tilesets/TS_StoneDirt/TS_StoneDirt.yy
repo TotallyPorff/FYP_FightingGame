@@ -1,8 +1,7 @@
 {
-  "name": "TS_StoneDirt",
   "spriteId": {
-    "name": "Spr_StoneDirt",
-    "path": "sprites/Spr_StoneDirt/Spr_StoneDirt.yy",
+    "name": "TSSpr_StoneDirt",
+    "path": "sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",
   },
   "tileWidth": 16,
   "tileHeight": 16,
@@ -65,6 +64,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
+  "name": "TS_StoneDirt",
   "tags": [],
   "resourceType": "GMTileSet",
 }
