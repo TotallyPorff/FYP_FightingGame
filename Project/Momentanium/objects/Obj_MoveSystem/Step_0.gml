@@ -20,6 +20,9 @@ var bbox_side;
 //Set bbox_side to correct side
 if (hSpeed > 0) bbox_side = bbox_right + 1; else bbox_side = bbox_left - 1;
 
+//Reset touching wall
+touchingWall = false;
+
 //Check if colliding
 if ((tilemap_get_at_pixel(tilemap, bbox_side + (hSpeed / room_speed), bbox_top + 1) != 0) ||
 (tilemap_get_at_pixel(tilemap, bbox_side + (hSpeed / room_speed), bbox_bottom - 1) != 0)) {
@@ -37,19 +40,37 @@ if ((tilemap_get_at_pixel(tilemap, bbox_side + (hSpeed / room_speed), bbox_top +
 	
 	//Reset hor speed
 	hSpeed = 0;
+	
+	//is touching a wall
+	touchingWall = true;
 }
 
 
 /* -- VERTICAL MOVEMENT --*/
-//Check for jumping
-if (keyboard_check_pressed(inpJump) && canJump) {
-	//Jump
-	canJump = false;
-	vSpeed = -jumpPower;
+//Wall sliding & Gravity
+if (touchingWall) {
+	//Apply wall slide gravity
+	vSpeed = Approach(vSpeed, maxSlideSpeed, gravAccel);
+} else {
+	//Apply Gravity
+	vSpeed = Approach(vSpeed, maxVSpeed, gravAccel);
 }
 
-//Apply Gravity
-vSpeed = Approach(vSpeed, maxVSpeed, gravAccel);
+//Check for normal jumping
+if (keyboard_check_pressed(inpJump)) {
+	
+	//Normal jump
+	if (canJump) {
+		//Jump
+		canJump = false;
+		vSpeed = -jumpPower;
+	} //Wall jump
+	else if (touchingWall) {
+		//jump off wall
+		vSpeed = -wallJumpPower;
+		hSpeed = (wallJumpPower / 2) * (-1 * hInput);
+	}
+}
 
 //Set bbox_side to correct side
 if (vSpeed > 0) bbox_side = bbox_bottom + 1; else bbox_side = bbox_top - 1;

@@ -10,10 +10,14 @@ hSlowdown = 10;
 
 //Vertical Movement Variables
 vSpeed = 0; //Vertical Speed
-maxVSpeed = 300; //Maximum Vertical Speed
+maxVSpeed = 200; //Maximum Vertical Speed
 canJump = true;
 jumpPower = 250;
 gravAccel = 15;
+
+//Wall sliding variables
+maxSlideSpeed = 50;
+wallJumpPower = 250;
 
 //Collision Variables
 tilemap = layer_tilemap_get_id("CollisionTiles"); //The ID of the collision tiles
@@ -24,6 +28,7 @@ inpRight = ord("D");
 inpUp = ord("W");
 inpDown = ord("S");
 inpJump = vk_space;
+inpDodge = vk_shift;
 
 //Reset variables
 spawnX = x;
