@@ -1,8 +1,14 @@
 {
   "resources": [
+    {"id":{"name":"Obj_DefaultChar","path":"objects/Obj_DefaultChar/Obj_DefaultChar.yy",},"order":1,},
+    {"id":{"name":"TSSpr_Collision","path":"sprites/TSSpr_Collision/TSSpr_Collision.yy",},"order":3,},
     {"id":{"name":"TS_StoneDirt","path":"tilesets/TS_StoneDirt/TS_StoneDirt.yy",},"order":1,},
+    {"id":{"name":"Obj_MoveSystem","path":"objects/Obj_MoveSystem/Obj_MoveSystem.yy",},"order":0,},
     {"id":{"name":"BG_Sky","path":"sprites/BG_Sky/BG_Sky.yy",},"order":1,},
+    {"id":{"name":"Ts_Collision","path":"tilesets/Ts_Collision/Ts_Collision.yy",},"order":2,},
+    {"id":{"name":"Scr_Helpful","path":"scripts/Scr_Helpful/Scr_Helpful.yy",},"order":0,},
     {"id":{"name":"TSSpr_StoneDirt","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},"order":0,},
+    {"id":{"name":"Spr_Placeholder","path":"sprites/Spr_Placeholder/Spr_Placeholder.yy",},"order":2,},
     {"id":{"name":"Rm_Testing","path":"rooms/Rm_Testing/Rm_Testing.yy",},"order":0,},
   ],
   "Options": [
