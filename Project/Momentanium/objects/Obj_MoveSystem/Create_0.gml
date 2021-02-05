@@ -4,16 +4,20 @@ as they are multiplyed by the room speed */
 
 //Horizontal Movement variables
 hSpeed = 0; //Horizontal Speed
-maxHSpeed = 200; //Maximum horiztonal Speed
+maxHSpeed = 250; //Maximum horiztonal Speed
 hAccel = 20; //Running acceleration
 hSlowdown = 10;
 
 //Vertical Movement Variables
 vSpeed = 0; //Vertical Speed
 maxVSpeed = 200; //Maximum Vertical Speed
+gravAccel = 15;
+
+//Jumping variables
 canJump = true;
 jumpPower = 250;
-gravAccel = 15;
+maxJumps = 3;
+jumpsUsed = 0;
 
 //Wall sliding variables
 maxSlideSpeed = 50;
