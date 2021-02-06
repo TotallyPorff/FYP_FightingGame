@@ -4,27 +4,35 @@ as they are multiplyed by the room speed */
 
 //Horizontal Movement variables
 hSpeed = 0; //Horizontal Speed
-maxHSpeed = 250; //Maximum horiztonal Speed
-hAccel = 20; //Running acceleration
-hSlowdown = 10;
+maxHSpeed = 500; //Maximum horiztonal Speed
+hAccel = 40; //Running acceleration
+hSlowdown = 20;
 
 //Vertical Movement Variables
 vSpeed = 0; //Vertical Speed
-maxVSpeed = 200; //Maximum Vertical Speed
-gravAccel = 15;
+maxVSpeed = 500; //Maximum Vertical Speed
+gravAccel = 30;
+
+//Fast Falling Movement Variables
+fastfalling = false;
+maxFFSpeed = 850;
+FFAccel = 50;
 
 //Jumping variables
 canJump = true;
-jumpPower = 250;
-maxJumps = 3;
+jumpPower = 750;
+maxJumps = 2;
 jumpsUsed = 0;
 
 //Wall sliding variables
-maxSlideSpeed = 50;
-wallJumpPower = 250;
+maxSlideSpeed = 100;
+wallJumpPower = 500;
+touchingFloor = false;
+touchingWall = false;
 
 //Collision Variables
 tilemap = layer_tilemap_get_id("CollisionTiles"); //The ID of the collision tiles
+deathTilemap = layer_tilemap_get_id("DeathTiles"); //The ID of the death tiles
 
 //Input variables
 inpLeft = ord("A");

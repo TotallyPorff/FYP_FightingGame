@@ -27,12 +27,12 @@ if ((tilemap_get_at_pixel(tilemap, bbox_side + (hSpeed / room_speed), bbox_top +
 	/* Snap to the right if moving right. x - distance to left of grid square + grid width
 	- distance from right side to centre of obj*/
 	if (hSpeed > 0) {
-		x = x - (x mod 16) + 15 - (bbox_right - x);
+		x = x - (x mod 32) + 31 - (bbox_right - x);
 	}
 	/*Snap to the left if moving left. x - distance to left of grid square - distance from
 	left side to centre of obj*/
 	else {
-		x = x - (x mod 16) - (bbox_left - x);
+		x = x - (x mod 32) - (bbox_left - x);
 	}
 	
 	//Reset hor speed
@@ -47,18 +47,34 @@ if ((tilemap_get_at_pixel(tilemap, bbox_side + (hSpeed / room_speed), bbox_top +
 }
 
 
-/* -- VERTICAL MOVEMENT --*/
+/* -- VERTICAL MOVEMENT -- */
+//check for fast falling
+if (keyboard_check_pressed(inpDown) && !touchingFloor) {
+	fastfalling = true;
+	
+	//reset vSpeed if moving upwards
+	if (vSpeed < 0) vSpeed = 0;
+}
+
 //Wall sliding & Gravity
 if (touchingWall) {
 	//Apply wall slide gravity
 	vSpeed = Approach(vSpeed, maxSlideSpeed, gravAccel);
 } else {
-	//Apply Gravity
-	vSpeed = Approach(vSpeed, maxVSpeed, gravAccel);
+	//Check if fastfalling
+	if (fastfalling) {
+		//Apply fastfall
+		vSpeed = Approach(vSpeed, maxFFSpeed, FFAccel);
+	} else {
+		//Apply Gravity
+		vSpeed = Approach(vSpeed, maxVSpeed, gravAccel);
+	}
 }
 
 //Check for jump input
 if (keyboard_check_pressed(inpJump)) {
+	//Reset fastfall
+	fastfalling = false;
 	
 	//Wall jump
 	if (touchingWall && !touchingFloor) {
@@ -88,15 +104,18 @@ if ((tilemap_get_at_pixel(tilemap, bbox_left + 1, bbox_side + (vSpeed / room_spe
 	/*Snap to the bottom. y - distance to top of grid square + grid height - distance
 	from bottom to centre*/
 	if (vSpeed > 0) {
-		y = y - (y mod 16) + 15 - (bbox_bottom - y);
+		y = y - (y mod 32) + 31 - (bbox_bottom - y);
 		//Reset jump
 		canJump = true;
 		jumpsUsed = 0;
 		touchingFloor = true;
+		
+		//Reset fastfall
+		fastfalling = false;
 	}
 	/*Snap to the top. y - distance to top of grid square - distance from top to centre*/
 	else {
-		y = y - (y mod 16) - (bbox_top - y);
+		y = y - (y mod 32) - (bbox_top - y);
 	}
 	
 	//Reset vert speed
@@ -114,7 +133,11 @@ y += vSpeed / room_speed;
 
 /* -- DEATH RESET -- */
 //Temporary reset for testing
-if (y > room_height - 32) {
+if (tilemap_get_at_pixel(deathTilemap, x, y) != 0) {
 	x = spawnX;
 	y = spawnY;
+	
+	//Reset speed
+	hSpeed = 0;
+	vSpeed = 0;
 }
