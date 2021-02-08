@@ -4,8 +4,8 @@ as they are multiplyed by the room speed */
 
 //Horizontal Movement variables
 hSpeed = 0; //Horizontal Speed
-maxHSpeed = 500; //Maximum horiztonal Speed
-hAccel = 40; //Running acceleration
+maxHSpeed = 400; //Maximum horiztonal Speed
+hAccel = 75; //Running acceleration
 hSlowdown = 20;
 
 //Vertical Movement Variables
@@ -20,7 +20,7 @@ FFAccel = 50;
 
 //Jumping variables
 canJump = true;
-jumpPower = 750;
+jumpPower = 650;
 maxJumps = 2;
 jumpsUsed = 0;
 
@@ -29,6 +29,13 @@ maxSlideSpeed = 100;
 wallJumpPower = 500;
 touchingFloor = false;
 touchingWall = false;
+
+//Dodge Variables
+canDodge = true;
+isInvincible = false;
+dodgeCooldown = 1;
+invincReset = 0.2; //Duration player is invincible
+dodgeSpeed = 300;
 
 //Collision Variables
 tilemap = layer_tilemap_get_id("CollisionTiles"); //The ID of the collision tiles

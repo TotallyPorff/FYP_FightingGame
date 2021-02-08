@@ -10,6 +10,7 @@
     {"id":{"name":"Ts_Death","path":"tilesets/Ts_Death/Ts_Death.yy",},"order":3,},
     {"id":{"name":"Scr_Helpful","path":"scripts/Scr_Helpful/Scr_Helpful.yy",},"order":0,},
     {"id":{"name":"TSSpr_StoneDirt","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},"order":0,},
+    {"id":{"name":"Obj_DevTools","path":"objects/Obj_DevTools/Obj_DevTools.yy",},"order":2,},
     {"id":{"name":"Spr_Placeholder","path":"sprites/Spr_Placeholder/Spr_Placeholder.yy",},"order":2,},
     {"id":{"name":"Rm_Testing","path":"rooms/Rm_Testing/Rm_Testing.yy",},"order":0,},
   ],

@@ -1,14 +1,20 @@
 /// @description Movement checks & Collisions
 
-/* -- HORIZONTAL MOVEMENT -- */
 //Grab inputs
 keyLeft = 0;
 keyRight = 0;
 if (keyboard_check(inpLeft)) keyLeft = 1;
 if (keyboard_check(inpRight)) keyRight = 1;
+hInput = keyRight - keyLeft;
 
-//calculate input and speed
-hInput = (keyRight - keyLeft);
+keyUp = 0;
+keyDown = 0;
+if (keyboard_check(inpUp)) keyUp = 1;
+if (keyboard_check(inpDown)) keyDown = 1;
+vInput = keyDown - keyUp;
+
+/* -- HORIZONTAL MOVEMENT -- */
+//calculate speed
 if (hInput != 0) {
 	hSpeed = Approach(hSpeed, maxHSpeed * hInput, hAccel);
 } else {
@@ -126,6 +132,21 @@ if ((tilemap_get_at_pixel(tilemap, bbox_left + 1, bbox_side + (vSpeed / room_spe
 	touchingFloor = false;
 }
 
+/* -- DODGE -- */
+//check if can dodge
+if (keyboard_check_pressed(inpDodge) && canDodge) {
+	//dodge
+	canDodge = false;
+	isInvincible = true;
+	alarm[0] = dodgeCooldown * room_speed; //Dodge cooldown
+	alarm[1] = invincReset * room_speed; //invincibility timer
+	
+	//Add movement
+	hSpeed = 0;
+	vSpeed = 0;
+	hSpeed += dodgeSpeed * hInput;
+	vSpeed += dodgeSpeed * vInput;
+}
 
 /* -- ADD MOVEMENT -- */
 x += hSpeed / room_speed;
