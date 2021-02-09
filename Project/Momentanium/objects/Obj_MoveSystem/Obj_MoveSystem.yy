@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "CharacterCode",
+    "path": "folders/Objects/CharacterCode.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_MoveSystem",

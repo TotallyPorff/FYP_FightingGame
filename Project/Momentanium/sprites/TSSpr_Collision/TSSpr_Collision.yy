@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c82b0f03-c0bc-4cc1-8d19-240eace978a0","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "TileSprites",
+    "path": "folders/Sprites/TileSprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "TSSpr_Collision",

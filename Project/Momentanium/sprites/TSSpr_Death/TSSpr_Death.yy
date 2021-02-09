@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"eab2b3fc-6cbf-406a-b6f4-124a4434e1fe","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "TileSprites",
+    "path": "folders/Sprites/TileSprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "TSSpr_Death",
