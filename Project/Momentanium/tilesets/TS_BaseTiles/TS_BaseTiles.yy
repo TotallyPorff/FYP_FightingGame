@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "TSSpr_StoneDirt",
-    "path": "sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",
+    "name": "TSSpr_Grasslands",
+    "path": "sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",
   },
   "tileWidth": 32,
   "tileHeight": 32,
@@ -64,7 +64,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
-  "name": "TS_StoneDirt",
+  "name": "TS_BaseTiles",
   "tags": [],
   "resourceType": "GMTileSet",
 }

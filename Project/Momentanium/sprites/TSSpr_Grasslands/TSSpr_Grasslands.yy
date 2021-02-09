@@ -8,9 +8,9 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 223,
+  "bbox_right": 159,
   "bbox_top": 0,
-  "bbox_bottom": 125,
+  "bbox_bottom": 127,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"52288164-d712-46a6-bcac-0a3bf510bffb","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"52288164-d712-46a6-bcac-0a3bf510bffb","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},"LayerId":{"name":"cd70e9c2-c811-41c5-a5a8-af991feb0b93","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"TSSpr_StoneDirt","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},"resourceVersion":"1.0","name":"52288164-d712-46a6-bcac-0a3bf510bffb","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"1fc5d465-1bc9-44f5-a5af-c55ebd4575ec","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"1fc5d465-1bc9-44f5-a5af-c55ebd4575ec","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},"LayerId":{"name":"e6235e3d-442c-46d2-9c2f-08970a61669d","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"TSSpr_Grasslands","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},"resourceVersion":"1.0","name":"1fc5d465-1bc9-44f5-a5af-c55ebd4575ec","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"TSSpr_StoneDirt","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},
+    "spriteId": {"name":"TSSpr_Grasslands","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"588ae328-59da-4030-930d-bb4c760dc7c8","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"52288164-d712-46a6-bcac-0a3bf510bffb","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"12f7e013-e102-4b07-85dc-34adde49fb3d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"1fc5d465-1bc9-44f5-a5af-c55ebd4575ec","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"TSSpr_StoneDirt","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},
+    "parent": {"name":"TSSpr_Grasslands","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},
     "resourceVersion": "1.3",
-    "name": "TSSpr_StoneDirt",
+    "name": "TSSpr_Grasslands",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cd70e9c2-c811-41c5-a5a8-af991feb0b93","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e6235e3d-442c-46d2-9c2f-08970a61669d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "TileSprites",
     "path": "folders/Sprites/TileSprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "TSSpr_StoneDirt",
+  "name": "TSSpr_Grasslands",
   "tags": [],
   "resourceType": "GMSprite",
 }

@@ -1,9 +1,10 @@
 {
   "resources": [
+    {"id":{"name":"TSSpr_Grasslands","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},"order":2,},
     {"id":{"name":"Spr_Defaultie_Falling","path":"sprites/Spr_Defaultie_Falling/Spr_Defaultie_Falling.yy",},"order":1,},
     {"id":{"name":"Obj_AttackSystem","path":"objects/Obj_AttackSystem/Obj_AttackSystem.yy",},"order":1,},
     {"id":{"name":"TSSpr_Collision","path":"sprites/TSSpr_Collision/TSSpr_Collision.yy",},"order":0,},
-    {"id":{"name":"TS_StoneDirt","path":"tilesets/TS_StoneDirt/TS_StoneDirt.yy",},"order":1,},
+    {"id":{"name":"TS_BaseTiles","path":"tilesets/TS_BaseTiles/TS_BaseTiles.yy",},"order":1,},
     {"id":{"name":"Spr_Defaultie_Running","path":"sprites/Spr_Defaultie_Running/Spr_Defaultie_Running.yy",},"order":4,},
     {"id":{"name":"Obj_MoveSystem","path":"objects/Obj_MoveSystem/Obj_MoveSystem.yy",},"order":0,},
     {"id":{"name":"Spr_Defaultie_Jumping","path":"sprites/Spr_Defaultie_Jumping/Spr_Defaultie_Jumping.yy",},"order":3,},
@@ -16,7 +17,6 @@
     {"id":{"name":"Spr_Defaultie_Idle","path":"sprites/Spr_Defaultie_Idle/Spr_Defaultie_Idle.yy",},"order":2,},
     {"id":{"name":"Scr_Helpful","path":"scripts/Scr_Helpful/Scr_Helpful.yy",},"order":0,},
     {"id":{"name":"Obj_Defaultie","path":"objects/Obj_Defaultie/Obj_Defaultie.yy",},"order":0,},
-    {"id":{"name":"TSSpr_StoneDirt","path":"sprites/TSSpr_StoneDirt/TSSpr_StoneDirt.yy",},"order":2,},
     {"id":{"name":"Obj_DevTools","path":"objects/Obj_DevTools/Obj_DevTools.yy",},"order":2,},
     {"id":{"name":"Spr_Placeholder","path":"sprites/Spr_Placeholder/Spr_Placeholder.yy",},"order":1,},
     {"id":{"name":"Spr_Defaultie_Still","path":"sprites/Spr_Defaultie_Still/Spr_Defaultie_Still.yy",},"order":5,},

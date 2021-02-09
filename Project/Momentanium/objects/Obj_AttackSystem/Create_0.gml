@@ -5,3 +5,4 @@ event_inherited();
 
 //Animation Variables
 charName = "Empty";
+fadeOut = false;

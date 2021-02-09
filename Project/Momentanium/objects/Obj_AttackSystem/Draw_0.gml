@@ -44,6 +44,24 @@ if (true) {
 	}	
 }
 
-/* -- DODGE COOLDOWN FADE -- */
+/* -- DODGE EFFECTS -- */
+//Check if invincible
+if (isInvincible) image_blend = make_color_rgb(144, 240, 169); //Flash Bright Green
+else image_blend = c_white;
+
+//Fade with Cooldown
+if (!canDodge && !isInvincible) {
+	if (fadeOut) {
+		image_alpha = Approach(image_alpha, 0, 0.25);
+		//Check for switch
+		if (image_alpha == 0) fadeOut = false;
+	} else {
+		image_alpha = Approach(image_alpha, 1, 0.25);
+		//Check for switch
+		if (image_alpha == 1) fadeOut = true;
+	}
+} else {
+	image_alpha = 1;
+}
 
 draw_self();
