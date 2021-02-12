@@ -142,8 +142,6 @@ if (keyboard_check_pressed(inpDodge) && canDodge) {
 	alarm[1] = invincReset * room_speed; //invincibility timer
 	
 	//Add movement
-	hSpeed = 0;
-	vSpeed = 0;
 	hSpeed += dodgeSpeed * hInput;
 	vSpeed += dodgeSpeed * vInput;
 }
