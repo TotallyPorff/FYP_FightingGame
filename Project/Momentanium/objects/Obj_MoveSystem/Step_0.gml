@@ -16,9 +16,9 @@ vInput = keyDown - keyUp;
 /* -- HORIZONTAL MOVEMENT -- */
 //calculate speed
 if (hInput != 0) {
-	hSpeed = Approach(hSpeed, maxHSpeed * hInput, hAccel);
+	hSpeed = Approach(hSpeed, charMoveStruct.maxHSpeed * hInput, charMoveStruct.hAccel);
 } else {
-	hSpeed = Approach(hSpeed, 0, hSlowdown);
+	hSpeed = Approach(hSpeed, 0, charMoveStruct.hSlowdown);
 }
 
 //check for collisions
@@ -65,15 +65,15 @@ if (keyboard_check_pressed(inpDown) && !touchingFloor) {
 //Wall sliding & Gravity
 if (touchingWall) {
 	//Apply wall slide gravity
-	vSpeed = Approach(vSpeed, maxSlideSpeed, gravAccel);
+	vSpeed = Approach(vSpeed, charMoveStruct.maxSlideSpeed, charMoveStruct.gravAccel);
 } else {
 	//Check if fastfalling
 	if (fastfalling) {
 		//Apply fastfall
-		vSpeed = Approach(vSpeed, maxFFSpeed, FFAccel);
+		vSpeed = Approach(vSpeed, charMoveStruct.maxFFSpeed, charMoveStruct.FFAccel);
 	} else {
 		//Apply Gravity
-		vSpeed = Approach(vSpeed, maxVSpeed, gravAccel);
+		vSpeed = Approach(vSpeed, charMoveStruct.maxVSpeed, charMoveStruct.gravAccel);
 	}
 }
 
@@ -85,16 +85,16 @@ if (keyboard_check_pressed(inpJump)) {
 	//Wall jump
 	if (touchingWall && !touchingFloor) {
 		//jump off wall
-		vSpeed = -wallJumpPower;
-		hSpeed = (wallJumpPower / 2) * (-1 * hInput);
+		vSpeed = -charMoveStruct.wallJumpPower;
+		hSpeed = (charMoveStruct.wallJumpPower / 2) * (-1 * hInput);
 	}
 	//Normal jump
 	else if (canJump) {
 		//Jump
-		vSpeed = -jumpPower;
-		jumpsUsed = Approach(jumpsUsed, maxJumps, 1);
+		vSpeed = -charMoveStruct.jumpPower;
+		jumpsUsed = Approach(jumpsUsed, charMoveStruct.maxJumps, 1);
 		//Check if can still jump
-		if (jumpsUsed == maxJumps) {
+		if (jumpsUsed == charMoveStruct.maxJumps) {
 			canJump = false;
 		}
 	} 
@@ -142,8 +142,8 @@ if (keyboard_check_pressed(inpDodge) && canDodge) {
 	alarm[1] = invincReset * room_speed; //invincibility timer
 	
 	//Add movement
-	hSpeed += dodgeSpeed * hInput;
-	vSpeed += dodgeSpeed * vInput;
+	hSpeed += charMoveStruct.dodgeSpeed * hInput;
+	vSpeed += charMoveStruct.dodgeSpeed * vInput;
 }
 
 /* -- ADD MOVEMENT -- */

@@ -2,31 +2,16 @@
 /* note: all movement variables are in pixels per second
 as they are multiplyed by the room speed */
 
-//Horizontal Movement variables
+//Movement Structure
+moveStructs = new createMoveStructs();
+charMoveStruct = moveStructs.mediumMoveStruct; //It is medium by default
+
+//Variables not in Struct
 hSpeed = 0; //Horizontal Speed
-maxHSpeed = 300; //Maximum horiztonal Speed
-hAccel = 40; //Running acceleration
-hSlowdown = 20;
-
-//Vertical Movement Variables
 vSpeed = 0; //Vertical Speed
-maxVSpeed = 400; //Maximum Vertical Speed
-gravAccel = 30;
-
-//Fast Falling Movement Variables
 fastfalling = false;
-maxFFSpeed = 700;
-FFAccel = 50;
-
-//Jumping variables
 canJump = true;
-jumpPower = 600;
-maxJumps = 2;
 jumpsUsed = 0;
-
-//Wall sliding variables
-maxSlideSpeed = 100;
-wallJumpPower = 400;
 touchingFloor = false;
 touchingWall = false;
 
