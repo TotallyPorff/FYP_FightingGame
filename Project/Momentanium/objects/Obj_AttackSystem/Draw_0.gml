@@ -2,7 +2,7 @@
 
 /* -- MOVEMENT ANIMATIONS -- */
 //If not attacking TODO
-if (true) {
+if (currentAttackState == attackState.idle) {
 	
 	//Set Direction
 	if (hInput != 0) {
@@ -16,29 +16,29 @@ if (true) {
 			//Check for input
 			if (hInput != 0) {
 				//Running sprite
-				sprite_index = asset_get_index(charName + "_Running");
+				sprite_index = asset_get_index(charName + "Running");
 			} else {
 				//Stopping Sprite
-				sprite_index = asset_get_index(charName + "_Stopping");
+				sprite_index = asset_get_index(charName + "Stopping");
 			}
 		} else {
 			//Idle sprite
-			sprite_index = asset_get_index(charName + "_Idle");
+			sprite_index = asset_get_index(charName + "Idle");
 		}
 	} else {	
 		//if wallhanging
 		if (touchingWall) {
 			//Wallhang sprite
-			sprite_index = asset_get_index(charName + "_Wallhang");
+			sprite_index = asset_get_index(charName + "Wallhang");
 		}
 		//Jumping or Falling
 		else {
 			if (vSpeed <= 0) {
 				//Jumping sprite
-				sprite_index = asset_get_index(charName + "_Jumping");
+				sprite_index = asset_get_index(charName + "Jumping");
 			} else {
 				//Falling sprite
-				sprite_index = asset_get_index(charName + "_Falling");
+				sprite_index = asset_get_index(charName + "Falling");
 			}
 		}
 	}	

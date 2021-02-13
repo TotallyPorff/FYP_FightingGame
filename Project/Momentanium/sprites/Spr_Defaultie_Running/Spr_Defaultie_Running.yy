@@ -136,8 +136,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4b89b78a-b034-41f4-a3d8-5666468e5a3a","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Defaultie",
-    "path": "folders/Sprites/Defaultie.yy",
+    "name": "Movement",
+    "path": "folders/Sprites/Defaultie/Movement.yy",
   },
   "resourceVersion": "1.0",
   "name": "Spr_Defaultie_Running",

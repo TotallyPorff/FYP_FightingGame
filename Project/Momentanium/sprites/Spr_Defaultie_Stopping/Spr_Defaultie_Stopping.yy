@@ -124,8 +124,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e668d1c4-cf21-4e7b-9222-dae36c7e7a4b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Defaultie",
-    "path": "folders/Sprites/Defaultie.yy",
+    "name": "Movement",
+    "path": "folders/Sprites/Defaultie/Movement.yy",
   },
   "resourceVersion": "1.0",
   "name": "Spr_Defaultie_Stopping",

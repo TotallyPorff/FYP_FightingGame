@@ -160,8 +160,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0b7eb415-21db-4398-80b3-50d70c6a99b0","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Defaultie",
-    "path": "folders/Sprites/Defaultie.yy",
+    "name": "Movement",
+    "path": "folders/Sprites/Defaultie/Movement.yy",
   },
   "resourceVersion": "1.0",
   "name": "Spr_Defaultie_Wallhang",

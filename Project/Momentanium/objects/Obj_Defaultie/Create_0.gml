@@ -4,4 +4,4 @@
 event_inherited();
 
 //Variables to Change
-charName = "Spr_Defaultie";
+charName = "Spr_Defaultie_";
