@@ -37,3 +37,17 @@ inpDodge = vk_shift;
 //Reset variables
 spawnX = x;
 spawnY = y;
+
+//Attack States
+enum attackState {
+	idle,
+	nAttack, //neutral
+	sAttack, //side
+	dAttack, //down
+	uAttack //up
+}
+currentAttackState = attackState.idle;
+
+//Hit cooldown Variables
+hitCooldown = false;
+hitCooldownTime = 0.25;

@@ -3,15 +3,17 @@
 //Grab inputs
 keyLeft = 0;
 keyRight = 0;
-if (keyboard_check(inpLeft)) keyLeft = 1;
-if (keyboard_check(inpRight)) keyRight = 1;
-hInput = keyRight - keyLeft;
-
 keyUp = 0;
 keyDown = 0;
-if (keyboard_check(inpUp)) keyUp = 1;
-if (keyboard_check(inpDown)) keyDown = 1;
-vInput = keyDown - keyUp;
+
+if (currentAttackState == attackState.idle && !hitCooldown) {
+	if (keyboard_check(inpLeft)) keyLeft = 1;
+	if (keyboard_check(inpRight)) keyRight = 1;
+	hInput = keyRight - keyLeft;
+	if (keyboard_check(inpUp)) keyUp = 1;
+	if (keyboard_check(inpDown)) keyDown = 1;
+	vInput = keyDown - keyUp;
+}
 
 /* -- HORIZONTAL MOVEMENT -- */
 //calculate speed
@@ -142,8 +144,8 @@ if (keyboard_check_pressed(inpDodge) && canDodge) {
 	alarm[1] = invincReset * room_speed; //invincibility timer
 	
 	//Add movement
-	hSpeed += charMoveStruct.dodgeSpeed * hInput;
-	vSpeed += charMoveStruct.dodgeSpeed * vInput;
+	hSpeed = charMoveStruct.dodgeSpeed * hInput;
+	vSpeed = charMoveStruct.dodgeSpeed * vInput;
 }
 
 /* -- ADD MOVEMENT -- */

@@ -7,19 +7,16 @@ event_inherited();
 charName = "Empty";
 fadeOut = false;
 
-//Attack States
-enum attackState {
-	idle,
-	nAttack, //neutral
-	sAttack, //side
-	dAttack, //down
-	uAttack //up
-}
-
-//Attack Variables
+//Attack Input Variables
 normAttckInp = ord("J");
 specAttckInp = ord("K");
-currentAttackState = attackState.idle;
+
+//Hitbox Variables
+hitbox = noone;
+beenHitBy = ds_list_create();
+hitboxesCreated = ds_list_create();
+
+
 
 //Grab Attack Structures
 baseAttacks = new DefaultieAttacks();
@@ -41,9 +38,9 @@ function takeDamage(permDamage, comboDamage) {
 }
 function takeKnockback(xKnockback, yKnockback) { //Parameters are the max knockback dealt
 	if (!isInvincible) {
-		//Apply knockback based on knockback power and current % of health
-		hSpeed += xKnockback * ((maxHealth - currentHealth) / maxHealth);
-		vSpeed += yKnockback * ((maxHealth - currentHealth) / maxHealth);
+		//Set knockback based on knockback power and current % of health
+		hSpeed = xKnockback * ((maxHealth * 2 - currentHealth) / maxHealth);
+		vSpeed = yKnockback * ((maxHealth * 2 - currentHealth) / maxHealth);
 	}
 }
 
@@ -56,11 +53,53 @@ function attack(charName, attackStruct) {
 		sprite_index = asset_get_index(charName + attackStruct.attackName);
 	}
 	
-	
+	//Create Hitboxes for object
+	//Check if all hitboxes have been made
+	if (ds_list_size(hitboxesCreated) < attackStruct.numOfAttacks) {
+		
+		//Check if none of the hitboxes have been made
+		if (ds_list_empty(hitboxesCreated)) {
+			
+			//Loop through all attack hitboxes and make them
+			for (currentHB = 1; currentHB <= attackStruct.numOfAttacks; currentHB++) {
+				
+				//Create hitbox
+				hitbox = instance_create_depth(x, y, 250, Obj_AttackHitbox);
+				hitbox.sprite_index = asset_get_index(charName + attackStruct.attackName + "_Hitbox" + string(currentHB));
+				
+				//Set its variables
+				hitbox.image_xscale = image_xscale;
+				hitbox.hitboxCreator = id;
+				hitbox.attackStats = attackStruct;
+				
+				//Set whether it does knockback
+				if (attackStruct.KBOnLast == true) {
+					
+					//If last hitbox
+					if (currentHB == attackStruct.numOfAttacks) {
+						hitbox.dealKnockback = true;
+					}
+					
+				} else {
+					hitbox.dealKnockback = true;
+				}
+				
+				//Add to DS list
+				ds_list_add(hitboxesCreated, hitbox);
+			}
+		}
+	}
 	
 	//Check if at end of attack
 	if (image_index >= image_number - 1) {
 		image_index = 0;
+		
+		//Destroy all hitboxes made
+		for (currentHB = 0; currentHB < ds_list_size(hitboxesCreated); currentHB++) {
+			instance_destroy(ds_list_find_value(hitboxesCreated, currentHB));
+		}
+		ds_list_clear(hitboxesCreated);
+		
 		return true;
 	}
 	

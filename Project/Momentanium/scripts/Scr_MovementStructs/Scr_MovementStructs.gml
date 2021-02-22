@@ -8,7 +8,7 @@ function createMoveStructs() constructor {
 		hSlowdown : 30,
 		//Vertical Movement Variables
 		maxVSpeed : 400, //Maximum Vertical Speed
-		gravAccel : 30,	
+		gravAccel : 10,	
 		//Fast Falling Movement Variables
 		maxFFSpeed : 500,
 		FFAccel : 40,
@@ -19,7 +19,9 @@ function createMoveStructs() constructor {
 		maxSlideSpeed : 100,
 		wallJumpPower : 500,
 		//Dodge Variables
-		dodgeSpeed : 300
+		dodgeSpeed : 300,
+		//Hurtbox Variables
+		hurtboxRadius : 6
 	};
 	
 	mediumMoveStruct = {
@@ -38,9 +40,11 @@ function createMoveStructs() constructor {
 		maxJumps : 2,
 		//Wall sliding variables
 		maxSlideSpeed : 125,
-		wallJumpPower : 450,
+		wallJumpPower : 400,
 		//Dodge Variables
-		dodgeSpeed : 250
+		dodgeSpeed : 250,
+		//Hurtbox Variables
+		hurtboxRadius : 8
 	};
 	
 	heavyMoveStruct = {
@@ -50,7 +54,7 @@ function createMoveStructs() constructor {
 		hSlowdown : 10,
 		//Vertical Movement Variables
 		maxVSpeed : 400, //Maximum Vertical Speed
-		gravAccel : 30,	
+		gravAccel : 10,	
 		//Fast Falling Movement Variables
 		maxFFSpeed : 800,
 		FFAccel : 50,
@@ -61,6 +65,8 @@ function createMoveStructs() constructor {
 		maxSlideSpeed : 150,
 		wallJumpPower : 400,
 		//Dodge Variables
-		dodgeSpeed : 200
+		dodgeSpeed : 200,
+		//Hurtbox Variables
+		hurtboxRadius : 10
 	};
 }
