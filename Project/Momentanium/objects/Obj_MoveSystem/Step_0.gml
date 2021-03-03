@@ -81,25 +81,28 @@ if (touchingWall) {
 
 //Check for jump input
 if (keyboard_check_pressed(inpJump)) {
-	//Reset fastfall
-	fastfalling = false;
-	
-	//Wall jump
-	if (touchingWall && !touchingFloor) {
-		//jump off wall
-		vSpeed = -charMoveStruct.wallJumpPower;
-		hSpeed = (charMoveStruct.wallJumpPower / 2) * (-1 * hInput);
-	}
-	//Normal jump
-	else if (canJump) {
-		//Jump
-		vSpeed = -charMoveStruct.jumpPower;
-		jumpsUsed = Approach(jumpsUsed, charMoveStruct.maxJumps, 1);
-		//Check if can still jump
-		if (jumpsUsed == charMoveStruct.maxJumps) {
-			canJump = false;
+	//Check if attacking and not being hit
+	if (currentAttackState == attackState.idle && !hitCooldown) {
+		//Reset fastfall
+		fastfalling = false;
+		
+		//Wall jump
+		if (touchingWall && !touchingFloor) {
+			//jump off wall
+			vSpeed = -charMoveStruct.wallJumpPower;
+			hSpeed = (charMoveStruct.wallJumpPower / 2) * (-1 * hInput);
 		}
-	} 
+		//Normal jump
+		else if (canJump) {
+			//Jump
+			vSpeed = -charMoveStruct.jumpPower;
+			jumpsUsed = Approach(jumpsUsed, charMoveStruct.maxJumps, 1);
+			//Check if can still jump
+			if (jumpsUsed == charMoveStruct.maxJumps) {
+				canJump = false;
+			}
+		} 
+	}
 }
 
 //Set bbox_side to correct side
@@ -137,15 +140,18 @@ if ((tilemap_get_at_pixel(tilemap, bbox_left + 1, bbox_side + (vSpeed / room_spe
 /* -- DODGE -- */
 //check if can dodge
 if (keyboard_check_pressed(inpDodge) && canDodge) {
-	//dodge
-	canDodge = false;
-	isInvincible = true;
-	alarm[0] = dodgeCooldown * room_speed; //Dodge cooldown
-	alarm[1] = invincReset * room_speed; //invincibility timer
-	
-	//Add movement
-	hSpeed = charMoveStruct.dodgeSpeed * hInput;
-	vSpeed = charMoveStruct.dodgeSpeed * vInput;
+	//Check if attacking and not being hit
+	if (currentAttackState == attackState.idle && !hitCooldown) {
+		//dodge
+		canDodge = false;
+		isInvincible = true;
+		alarm[0] = dodgeCooldown * room_speed; //Dodge cooldown
+		alarm[1] = invincReset * room_speed; //invincibility timer
+		
+		//Add movement
+		hSpeed = charMoveStruct.dodgeSpeed * hInput;
+		vSpeed = charMoveStruct.dodgeSpeed * vInput;
+	}
 }
 
 /* -- ADD MOVEMENT -- */

@@ -21,7 +21,7 @@ if (!isInvincible && !hitCooldown) {
 			if (hitBy.dealKnockback) {
 				takeKnockback(hitBy.attackStats.xKnockback * hitBy.image_xscale, hitBy.attackStats.yKnockback);
 			} else {
-				takeKnockback(10 * hitBy.image_xscale, 0);
+				takeKnockback(25 * hitBy.image_xscale, 25);
 			}
 			
 			//add to DS list
@@ -30,6 +30,9 @@ if (!isInvincible && !hitCooldown) {
 			//Start hit cooldown timer
 			hitCooldown = true;
 			alarm[2] = hitCooldownTime * room_speed;
+			
+			//Set image scale
+			image_xscale = hitBy.image_xscale * -1;
 		}
 	}
 }

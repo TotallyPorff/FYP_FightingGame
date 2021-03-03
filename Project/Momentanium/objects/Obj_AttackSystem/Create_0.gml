@@ -16,8 +16,6 @@ hitbox = noone;
 beenHitBy = ds_list_create();
 hitboxesCreated = ds_list_create();
 
-
-
 //Grab Attack Structures
 baseAttacks = new DefaultieAttacks();
 neutralAttack = baseAttacks.neutralAttack;
@@ -88,6 +86,19 @@ function attack(charName, attackStruct) {
 				ds_list_add(hitboxesCreated, hitbox);
 			}
 		}
+	}
+	
+	//If hit
+	if (hitCooldown == true) {
+		image_index = 0;
+		
+		//Destroy all hitboxes made
+		for (currentHB = 0; currentHB < ds_list_size(hitboxesCreated); currentHB++) {
+			instance_destroy(ds_list_find_value(hitboxesCreated, currentHB));
+		}
+		ds_list_clear(hitboxesCreated);
+		
+		return true;
 	}
 	
 	//Check if at end of attack

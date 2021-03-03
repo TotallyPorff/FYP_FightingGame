@@ -6,6 +6,14 @@ if (currentAttackState == attackState.idle) {
 	
 	//If being hit
 	if (hitCooldown) {
+		//Check if not in air
+		if (touchingFloor) {
+			//Set to hit variable
+			sprite_index = asset_get_index(charName + "Hit");
+		} else {
+			//Set to hit variable
+			sprite_index = asset_get_index(charName + "HitInAir");
+		}
 		
 	} else {
 		//Set Direction
@@ -68,5 +76,9 @@ if (!canDodge && !isInvincible) {
 } else {
 	image_alpha = 1;
 }
+
+/* -- HIT EFFECTS -- */
+if (hitCooldown) image_blend = make_color_rgb(255, 100, 100); //Flash Red
+else image_blend = c_white;
 
 draw_self();
