@@ -3,12 +3,12 @@ function createMoveStructs() constructor {
 	
 	lightMoveStruct = {
 		//Horizontal Movement variables
-		maxHSpeed : 400, //Maximum horiztonal Speed
+		maxHSpeed : 270, //Maximum horiztonal Speed
 		hAccel : 50, //Running acceleration
-		hSlowdown : 30,
+		hSlowdown : 10,
 		//Vertical Movement Variables
 		maxVSpeed : 400, //Maximum Vertical Speed
-		gravAccel : 10,	
+		gravAccel : 30,	
 		//Fast Falling Movement Variables
 		maxFFSpeed : 500,
 		FFAccel : 40,
@@ -26,9 +26,9 @@ function createMoveStructs() constructor {
 	
 	mediumMoveStruct = {
 		//Horizontal Movement variables
-		maxHSpeed : 350, //Maximum horiztonal Speed
+		maxHSpeed : 235, //Maximum horiztonal Speed
 		hAccel : 40, //Running acceleration
-		hSlowdown : 20,
+		hSlowdown : 10,
 		//Vertical Movement Variables
 		maxVSpeed : 400, //Maximum Vertical Speed
 		gravAccel : 30,	
@@ -49,12 +49,12 @@ function createMoveStructs() constructor {
 	
 	heavyMoveStruct = {
 		//Horizontal Movement variables
-		maxHSpeed : 300, //Maximum horiztonal Speed
+		maxHSpeed : 200, //Maximum horiztonal Speed
 		hAccel :30, //Running acceleration
 		hSlowdown : 10,
 		//Vertical Movement Variables
 		maxVSpeed : 400, //Maximum Vertical Speed
-		gravAccel : 10,	
+		gravAccel : 30,	
 		//Fast Falling Movement Variables
 		maxFFSpeed : 800,
 		FFAccel : 50,

@@ -52,11 +52,30 @@ if (currentAttackState == attackState.idle) {
 			
 		} else if (hInput != 0) { //Side
 			
+			//Set attack State
+			currentAttackState = attackState.sAttack;
+			//Start Attack
+			attack(charName, sideAttack);
+			//Move player if needed
+			if (sideAttack.xMove != 0 || sideAttack.yMove != 0) {
+				//Apply movement
+				hSpeed = sideAttack.xMove * image_xscale;
+				vSpeed = sideAttack.yMove;
+			}
+			
 		} else { //Neutral
+			
 			//Set attack State
 			currentAttackState = attackState.nAttack;
 			//Start Attack
 			attack(charName, neutralAttack);
+			//Move player if needed
+			if (neutralAttack.xMove != 0 || neutralAttack.yMove != 0) {
+				//Apply movement
+				hSpeed = neutralAttack.xMove * image_xscale;
+				vSpeed = neutralAttack.yMove;
+			}
+			
 		}
 	}
 }
@@ -65,6 +84,11 @@ if (currentAttackState == attackState.idle) {
 switch (currentAttackState) {
 	case attackState.nAttack:
 		if (attack(charName, neutralAttack)) {
+			currentAttackState = attackState.idle;
+		}
+		break;
+	case attackState.sAttack:
+		if (attack(charName, sideAttack)) {
 			currentAttackState = attackState.idle;
 		}
 		break;

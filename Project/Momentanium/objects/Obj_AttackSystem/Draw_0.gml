@@ -57,9 +57,10 @@ if (currentAttackState == attackState.idle) {
 	}
 }
 
-/* -- DODGE EFFECTS -- */
+/* -- EFFECTS -- */
 //Check if invincible
-if (isInvincible) image_blend = make_color_rgb(144, 240, 169); //Flash Bright Green
+if (isInvincible) image_blend = make_color_rgb(144, 240, 169); //Flash Bright Green for dodge
+else if (hitCooldown) image_blend = make_color_rgb(255, 100, 100); //Flash Red for being hit
 else image_blend = c_white;
 
 //Fade with Cooldown
@@ -76,9 +77,5 @@ if (!canDodge && !isInvincible) {
 } else {
 	image_alpha = 1;
 }
-
-/* -- HIT EFFECTS -- */
-if (hitCooldown) image_blend = make_color_rgb(255, 100, 100); //Flash Red
-else image_blend = c_white;
 
 draw_self();

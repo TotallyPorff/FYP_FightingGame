@@ -19,6 +19,7 @@ hitboxesCreated = ds_list_create();
 //Grab Attack Structures
 baseAttacks = new DefaultieAttacks();
 neutralAttack = baseAttacks.neutralAttack;
+sideAttack = baseAttacks.sideAttack;
 
 //Health & Knockback
 maxHealth = 100;

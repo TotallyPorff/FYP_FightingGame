@@ -5,6 +5,8 @@ keyLeft = 0;
 keyRight = 0;
 keyUp = 0;
 keyDown = 0;
+hInput = 0;
+vInput = 0;
 
 if (currentAttackState == attackState.idle && !hitCooldown) {
 	if (keyboard_check(inpLeft)) keyLeft = 1;
@@ -65,7 +67,7 @@ if (keyboard_check_pressed(inpDown) && !touchingFloor) {
 }
 
 //Wall sliding & Gravity
-if (touchingWall) {
+if (touchingWall && hInput != 0) {
 	//Apply wall slide gravity
 	vSpeed = Approach(vSpeed, charMoveStruct.maxSlideSpeed, charMoveStruct.gravAccel);
 } else {
