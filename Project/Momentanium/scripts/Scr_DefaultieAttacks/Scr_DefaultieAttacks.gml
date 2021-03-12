@@ -20,7 +20,7 @@ function DefaultieAttacks() constructor {
 		yKnockback: -200,
 		numOfAttacks: 1,
 		KBOnLast: false,
-		xMove: 300,
+		xMove: 320,
 		yMove: 0
 	}
 }

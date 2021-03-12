@@ -22,7 +22,13 @@ if (currentAttackState == attackState.idle && !hitCooldown) {
 if (hInput != 0) {
 	hSpeed = Approach(hSpeed, charMoveStruct.maxHSpeed * hInput, charMoveStruct.hAccel);
 } else {
-	hSpeed = Approach(hSpeed, 0, charMoveStruct.hSlowdown);
+	if (currentAttackState == attackState.idle) {
+		//Normal Slowdown
+		hSpeed = Approach(hSpeed, 0, charMoveStruct.hSlowdown);
+	} else {
+		//Slow Slowdown
+		hSpeed = Approach(hSpeed, 0, charMoveStruct.hSlowdown * 0.5);
+	}
 }
 
 //check for collisions
