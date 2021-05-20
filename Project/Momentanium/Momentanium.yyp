@@ -3,6 +3,7 @@
     {"id":{"name":"TS_GrasslandsDeco","path":"tilesets/TS_GrasslandsDeco/TS_GrasslandsDeco.yy",},"order":4,},
     {"id":{"name":"Obj_PunchingBag","path":"objects/Obj_PunchingBag/Obj_PunchingBag.yy",},"order":1,},
     {"id":{"name":"TSSpr_Grasslands","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},"order":2,},
+    {"id":{"name":"Spr_Defaultie_NAir_Hitbox2","path":"sprites/Spr_Defaultie_NAir_Hitbox2/Spr_Defaultie_NAir_Hitbox2.yy",},"order":1,},
     {"id":{"name":"Spr_Defaultie_NAttck","path":"sprites/Spr_Defaultie_NAttck/Spr_Defaultie_NAttck.yy",},"order":0,},
     {"id":{"name":"Spr_Defaultie_Hit","path":"sprites/Spr_Defaultie_Hit/Spr_Defaultie_Hit.yy",},"order":8,},
     {"id":{"name":"Spr_Defaultie_NAttck_Hitbox2","path":"sprites/Spr_Defaultie_NAttck_Hitbox2/Spr_Defaultie_NAttck_Hitbox2.yy",},"order":1,},
@@ -12,6 +13,8 @@
     {"id":{"name":"TSSpr_Collision","path":"sprites/TSSpr_Collision/TSSpr_Collision.yy",},"order":0,},
     {"id":{"name":"TS_Grasslands","path":"tilesets/TS_Grasslands/TS_Grasslands.yy",},"order":1,},
     {"id":{"name":"Obj_CameraControl","path":"objects/Obj_CameraControl/Obj_CameraControl.yy",},"order":5,},
+    {"id":{"name":"Spr_Defaultie_NAir","path":"sprites/Spr_Defaultie_NAir/Spr_Defaultie_NAir.yy",},"order":2,},
+    {"id":{"name":"Spr_Defaultie_NAir_Hitbox1","path":"sprites/Spr_Defaultie_NAir_Hitbox1/Spr_Defaultie_NAir_Hitbox1.yy",},"order":0,},
     {"id":{"name":"Spr_Defaultie_Running","path":"sprites/Spr_Defaultie_Running/Spr_Defaultie_Running.yy",},"order":3,},
     {"id":{"name":"Obj_MoveSystem","path":"objects/Obj_MoveSystem/Obj_MoveSystem.yy",},"order":0,},
     {"id":{"name":"Spr_Defaultie_Jumping","path":"sprites/Spr_Defaultie_Jumping/Spr_Defaultie_Jumping.yy",},"order":2,},
@@ -77,6 +80,7 @@
     {"folderPath":"folders/Sprites/Defaultie/Hitboxes.yy","order":9,"resourceVersion":"1.0","name":"Hitboxes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/DefaultieAttacks.yy","order":3,"resourceVersion":"1.0","name":"DefaultieAttacks","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Defaultie/Hitboxes/NAttck.yy","order":0,"resourceVersion":"1.0","name":"NAttck","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/Defaultie/Hitboxes/NAir.yy","order":2,"resourceVersion":"1.0","name":"NAir","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -86,7 +90,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.1.542",
+    "IDEVersion": "2.3.2.560",
   },
   "resourceVersion": "1.4",
   "name": "Momentanium",

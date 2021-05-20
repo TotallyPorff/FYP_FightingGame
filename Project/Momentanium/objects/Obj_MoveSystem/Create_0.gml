@@ -26,13 +26,13 @@ dodgeSpeed = 300;
 tilemap = layer_tilemap_get_id("CollisionTiles"); //The ID of the collision tiles
 deathTilemap = layer_tilemap_get_id("DeathTiles"); //The ID of the death tiles
 
-//Input variables
-inpLeft = ord("A");
-inpRight = ord("D");
-inpUp = ord("W");
-inpDown = ord("S");
-inpJump = vk_space;
-inpDodge = vk_shift;
+//Keyboard Input variables
+inpLeftKey = ord("A");
+inpRightKey = ord("D");
+inpUpKey = ord("W");
+inpDownKey = ord("S");
+inpJumpKey = vk_space;
+inpDodgeKey = vk_shift;
 
 //Reset variables
 spawnX = x;
@@ -44,7 +44,9 @@ enum attackState {
 	nAttack, //neutral
 	sAttack, //side
 	dAttack, //down
-	uAttack //up
+	nAir,
+	sAir,
+	dAir
 }
 currentAttackState = attackState.idle;
 

@@ -1,6 +1,14 @@
 /// @description Movement checks & Collisions
 
-//Grab inputs
+//Player Inputs
+inpLeft = keyboard_check(inpLeftKey);
+inpRight = keyboard_check(inpRightKey);
+inpUp = keyboard_check(inpUpKey);
+inpDown = keyboard_check(inpDownKey);
+inpJump = keyboard_check_pressed(inpJumpKey);
+inpDodge = keyboard_check_pressed(inpDodgeKey);
+
+//Reset Input values
 keyLeft = 0;
 keyRight = 0;
 keyUp = 0;
@@ -9,11 +17,11 @@ hInput = 0;
 vInput = 0;
 
 if (currentAttackState == attackState.idle && !hitCooldown) {
-	if (keyboard_check(inpLeft)) keyLeft = 1;
-	if (keyboard_check(inpRight)) keyRight = 1;
+	if (inpLeft) keyLeft = 1;
+	if (inpRight) keyRight = 1;
 	hInput = keyRight - keyLeft;
-	if (keyboard_check(inpUp)) keyUp = 1;
-	if (keyboard_check(inpDown)) keyDown = 1;
+	if (inpUp) keyUp = 1;
+	if (inpDown) keyDown = 1;
 	vInput = keyDown - keyUp;
 }
 
@@ -65,7 +73,7 @@ if ((tilemap_get_at_pixel(tilemap, bbox_side + (hSpeed / room_speed), bbox_top +
 
 /* -- VERTICAL MOVEMENT -- */
 //check for fast falling
-if (keyboard_check_pressed(inpDown) && !touchingFloor) {
+if (inpDown && !touchingFloor) {
 	fastfalling = true;
 	
 	//reset vSpeed if moving upwards
@@ -88,7 +96,7 @@ if (touchingWall && hInput != 0) {
 }
 
 //Check for jump input
-if (keyboard_check_pressed(inpJump)) {
+if (inpJump) {
 	//Check if attacking and not being hit
 	if (currentAttackState == attackState.idle && !hitCooldown) {
 		//Reset fastfall
@@ -147,7 +155,7 @@ if ((tilemap_get_at_pixel(tilemap, bbox_left + 1, bbox_side + (vSpeed / room_spe
 
 /* -- DODGE -- */
 //check if can dodge
-if (keyboard_check_pressed(inpDodge) && canDodge) {
+if (inpDodge && canDodge) {
 	//Check if attacking and not being hit
 	if (currentAttackState == attackState.idle && !hitCooldown) {
 		//dodge

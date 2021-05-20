@@ -7,9 +7,9 @@ event_inherited();
 charName = "Empty";
 fadeOut = false;
 
-//Attack Input Variables
-normAttckInp = ord("J");
-specAttckInp = ord("K");
+//Attack Keyboard Input
+normAttckKey = ord("J");
+specAttckKey = ord("K");
 
 //Hitbox Variables
 hitbox = noone;
@@ -20,6 +20,8 @@ hitboxesCreated = ds_list_create();
 baseAttacks = new DefaultieAttacks();
 neutralAttack = baseAttacks.neutralAttack;
 sideAttack = baseAttacks.sideAttack;
+
+neutralAir = baseAttacks.neutralAir;
 
 //Health & Knockback
 maxHealth = 100;
@@ -43,8 +45,8 @@ function takeKnockback(xKnockback, yKnockback) { //Parameters are the max knockb
 	}
 }
 
-//Attack functions and States
-function attack(charName, attackStruct) {
+/* -- ATTACK FUNCTIONS -- */
+function attackSprite(attackStruct) {
 	
 	//Set sprite index to correct attack
 	if (sprite_index != asset_get_index(charName + attackStruct.attackName)) {
@@ -114,6 +116,55 @@ function attack(charName, attackStruct) {
 		
 		return true;
 	}
+	
+	return false;
+}
+
+//Neutral Attack
+function NAttack() {
+	//Set attack State
+	if (currentAttackState != attackState.nAttack) {
+		currentAttackState = attackState.nAttack;
+	}
+	
+	//Create sprites/Complete Attack
+	if (attackSprite(neutralAttack)) {
+		return true;
+	}
+	
+	return false;
+}
+//Side Attack
+function SAttack() {
+	//Set attack State
+	if (currentAttackState != attackState.sAttack) {
+		currentAttackState = attackState.sAttack;
+		
+		//Apply Movement
+		hSpeed = 320 * image_xscale;
+	}
+	
+	//Create sprites/Complete Attack
+	if (attackSprite(sideAttack)) {
+		return true;
+	}
+	
+	return false;
+}
+//Neutral Air
+function NAir() {
+	//Set attack State
+	if (currentAttackState != attackState.nAir) {
+		currentAttackState = attackState.nAir;
+	}
+	
+	//Create sprites/Complete Attack
+	if (attackSprite(neutralAir)) {
+		return true;
+	}
+	
+	//Apply Movement
+	if (vSpeed > 0) vSpeed = 0;
 	
 	return false;
 }

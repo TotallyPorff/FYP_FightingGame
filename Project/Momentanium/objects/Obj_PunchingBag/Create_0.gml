@@ -5,11 +5,11 @@ event_inherited();
 
 //Variables to Change
 charName = "Spr_Defaultie_";
-inpDodge = vk_f12;
-inpLeft = vk_f12;
-inpRight = vk_f12;
-inpUp = vk_f12;
-inpDown = vk_f12;
-inpJump = vk_f12;
-normAttckInp = vk_f12;
-specAttckInp = vk_f12;
+inpLeftKey = vk_f12;
+inpRightKey = vk_f12;
+inpUpKey = vk_f12;
+inpDownKey = vk_f12;
+inpJumpKey = vk_f12;
+inpDodgeKey = vk_f12;
+normAttckKey = vk_f12;
+specAttckKey = vk_f12;

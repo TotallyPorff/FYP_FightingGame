@@ -3,6 +3,10 @@
 // Inherit the parent event
 event_inherited();
 
+//Attack Inputs
+normAttckInp = keyboard_check_pressed(normAttckKey);
+//specAttackInp = keyboard_check_pressed(specAttckKey);
+
 /* -- REGEN NON-PERM DAMAGED HEALTH -- */
 currentHealth = Approach(currentHealth, currentPermHealth, regenRate / room_speed);
 
@@ -44,38 +48,25 @@ if (currentHealth <= 0) instance_destroy();
 if (currentAttackState == attackState.idle) {
 	
 	/* -- NORMAL ATTACKS -- */
-	if (keyboard_check_pressed(normAttckInp) && touchingFloor) {
+	if (normAttckInp && touchingFloor) {
 		//check for inputs
-		if (vInput == -1) { //Up
+		if (vInput == 1) { //Down
 			
-		} else if (vInput == 1) { //Down
+		} else if (hInput != 0) { //Side
+			SAttack();
+		} else { //Neutral
+			NAttack();		
+		}
+	}
+	/* -- AERIAL ATTACKS -- */
+	else if (normAttckInp && !touchingFloor && !touchingWall) {
+		//check for inputs
+		if (vInput == 1) { //Down
 			
 		} else if (hInput != 0) { //Side
 			
-			//Set attack State
-			currentAttackState = attackState.sAttack;
-			//Start Attack
-			attack(charName, sideAttack);
-			//Move player if needed
-			if (sideAttack.xMove != 0 || sideAttack.yMove != 0) {
-				//Apply movement
-				hSpeed = sideAttack.xMove * image_xscale;
-				vSpeed = sideAttack.yMove;
-			}
-			
 		} else { //Neutral
-			
-			//Set attack State
-			currentAttackState = attackState.nAttack;
-			//Start Attack
-			attack(charName, neutralAttack);
-			//Move player if needed
-			if (neutralAttack.xMove != 0 || neutralAttack.yMove != 0) {
-				//Apply movement
-				hSpeed = neutralAttack.xMove * image_xscale;
-				vSpeed = neutralAttack.yMove;
-			}
-			
+			NAir();		
 		}
 	}
 }
@@ -83,12 +74,17 @@ if (currentAttackState == attackState.idle) {
 /* -- CONTINUE ATTACKS -- */
 switch (currentAttackState) {
 	case attackState.nAttack:
-		if (attack(charName, neutralAttack)) {
+		if (NAttack()) {
 			currentAttackState = attackState.idle;
 		}
 		break;
 	case attackState.sAttack:
-		if (attack(charName, sideAttack)) {
+		if (SAttack()) {
+			currentAttackState = attackState.idle;
+		}
+		break;
+	case attackState.nAir:
+		if (NAir()) {
 			currentAttackState = attackState.idle;
 		}
 		break;
