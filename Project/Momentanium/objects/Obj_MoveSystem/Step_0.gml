@@ -7,6 +7,7 @@ inpUp = keyboard_check(inpUpKey);
 inpDown = keyboard_check(inpDownKey);
 inpJump = keyboard_check_pressed(inpJumpKey);
 inpDodge = keyboard_check_pressed(inpDodgeKey);
+inpFF = keyboard_check_pressed(inpDownKey);
 
 //Reset Input values
 keyLeft = 0;
@@ -73,7 +74,7 @@ if ((tilemap_get_at_pixel(tilemap, bbox_side + (hSpeed / room_speed), bbox_top +
 
 /* -- VERTICAL MOVEMENT -- */
 //check for fast falling
-if (inpDown && !touchingFloor) {
+if (inpFF && !touchingFloor) {
 	fastfalling = true;
 	
 	//reset vSpeed if moving upwards
@@ -179,13 +180,24 @@ if (!isDead) {
 /* -- DEATH RESET -- */
 if (tilemap_get_at_pixel(deathTilemap, x, y) != 0) isDead = true;
 if (isDead) {
+	
 	//Set alarm
 	if (!alarmSet) {
 		alarm[2] = deathTimer * room_speed;
 		alarmSet = true;
+		
+		//Spawn death effect
+		instance_create_depth(x, y, 150, Obj_DeathEffect);
+		
+		//Go invisible
+		visible = false;
 	}
 	
 	//Reset speed
 	hSpeed = 0;
 	vSpeed = 0;
+	
+	//Set position
+	//x = room_width/2;
+	//y = room_height/2;
 }

@@ -42,6 +42,7 @@
     {"id":{"name":"Spr_Defaultie_Still","path":"sprites/Spr_Defaultie_Still/Spr_Defaultie_Still.yy",},"order":4,},
     {"id":{"name":"Spr_Defaultie_NAttck_Hitbox1","path":"sprites/Spr_Defaultie_NAttck_Hitbox1/Spr_Defaultie_NAttck_Hitbox1.yy",},"order":0,},
     {"id":{"name":"Spr_Defaultie_SAttck","path":"sprites/Spr_Defaultie_SAttck/Spr_Defaultie_SAttck.yy",},"order":1,},
+    {"id":{"name":"Obj_DeathEffect","path":"objects/Obj_DeathEffect/Obj_DeathEffect.yy",},"order":7,},
     {"id":{"name":"Spr_PermDamage","path":"sprites/Spr_PermDamage/Spr_PermDamage.yy",},"order":2,},
     {"id":{"name":"Rm_Testing","path":"rooms/Rm_Testing/Rm_Testing.yy",},"order":0,},
   ],

@@ -174,7 +174,7 @@ function NAir() {
 	}
 	
 	//Apply Movement
-	if (vSpeed > 0) vSpeed = 0;
+	if (vSpeed > charMoveStruct.maxVSpeed / 2) vSpeed = charMoveStruct.maxVSpeed / 2;
 	
 	return false;
 }

@@ -55,6 +55,7 @@ hitCooldown = false;
 hitCooldownTime = 0.25;
 
 //Death variables
+visible = true;
 isDead = false;
 alarmSet = false;
 deathTimer = 3; //Seconds

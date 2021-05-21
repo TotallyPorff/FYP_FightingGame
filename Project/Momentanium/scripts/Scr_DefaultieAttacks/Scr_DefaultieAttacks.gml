@@ -14,7 +14,7 @@ function DefaultieAttacks() constructor {
 		attackName: "SAttck",
 		permDamage: 5,
 		comboDamage: 10,
-		xKnockback: 300,
+		xKnockback: 100,
 		yKnockback: -200,
 		numOfAttacks: 1,
 		KBOnLast: false
@@ -27,6 +27,6 @@ function DefaultieAttacks() constructor {
 		xKnockback: 200,
 		yKnockback: -400,
 		numOfAttacks: 2,
-		KBOnLast: true
+		KBOnLast: false
 	}
 }

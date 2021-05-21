@@ -25,9 +25,15 @@ if (!isInvincible && !hitCooldown) {
 			//take damage and knockback
 			takeDamage(hitBy.attackStats.permDamage, hitBy.attackStats.comboDamage);
 			if (hitBy.dealKnockback) {
-				takeKnockback(hitBy.attackStats.xKnockback * hitBy.image_xscale, hitBy.attackStats.yKnockback);
+				//Calculate Knockback
+				dealKnockX = hitBy.hitboxCreator.hSpeed + (hitBy.attackStats.xKnockback * hitBy.image_xscale);
+				dealKnockY = hitBy.hitboxCreator.vSpeed + hitBy.attackStats.yKnockback;
+				takeKnockback(dealKnockX, dealKnockY);
 			} else {
-				takeKnockback(25 * hitBy.image_xscale, 25);
+				//Calculate Knockback
+				dealKnockX = hitBy.hitboxCreator.hSpeed + (25 * hitBy.image_xscale);
+				dealKnockY = hitBy.hitboxCreator.vSpeed + 25;
+				takeKnockback(dealKnockX, dealKnockY);
 			}
 			
 			//add to DS list
@@ -49,6 +55,10 @@ if (isDead) {
 	//Stop all attacks and reset
 	stopAllAttacks();
 	currentAttackState = attackState.idle;
+	
+	//Reset Health
+	currentHealth = maxHealth;
+	currentPermHealth = maxHealth;
 }
 
 /* -- ATTACKS -- */

@@ -12,11 +12,14 @@ for (var i = 0; i < ds_list_size(playerChars); i++) {
 	//Check if instance exists
 	playerCharID = ds_list_find_value(playerChars, i);
 	if (instance_exists(playerCharID)) {
+		//If player isnt dead
+		if (!playerCharID.isDead) {
 		existingChars += 1;
 		
 		//Add up positions
 		averageXPos += playerCharID.x;
 		averageYPos += playerCharID.y;
+		}
 	}
 }
 if (existingChars != 0) {
