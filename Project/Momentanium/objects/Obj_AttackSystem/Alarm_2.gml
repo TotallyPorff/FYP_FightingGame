@@ -1,2 +1,5 @@
-/// @description Reset Hit Cooldown
-hitCooldown = false;
+/// @description Inherited
+
+// Inherit the parent event
+event_inherited();
+

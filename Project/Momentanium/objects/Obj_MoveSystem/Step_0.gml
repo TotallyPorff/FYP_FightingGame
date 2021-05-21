@@ -171,14 +171,19 @@ if (inpDodge && canDodge) {
 }
 
 /* -- ADD MOVEMENT -- */
-x += hSpeed / room_speed;
-y += vSpeed / room_speed;
+if (!isDead) {
+	x += hSpeed / room_speed;
+	y += vSpeed / room_speed;
+}
 
 /* -- DEATH RESET -- */
-//Temporary reset for testing
-if (tilemap_get_at_pixel(deathTilemap, x, y) != 0) {
-	x = spawnX;
-	y = spawnY;
+if (tilemap_get_at_pixel(deathTilemap, x, y) != 0) isDead = true;
+if (isDead) {
+	//Set alarm
+	if (!alarmSet) {
+		alarm[2] = deathTimer * room_speed;
+		alarmSet = true;
+	}
 	
 	//Reset speed
 	hSpeed = 0;

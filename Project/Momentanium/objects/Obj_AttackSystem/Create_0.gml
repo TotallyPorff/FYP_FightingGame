@@ -119,6 +119,16 @@ function attackSprite(attackStruct) {
 	
 	return false;
 }
+function stopAllAttacks() {
+	//Loop through all hitboxes created
+	if (!ds_list_empty(hitboxesCreated)) {
+		for (var i = 0; i < ds_list_size(hitboxesCreated); i++) {
+			//Delete hitbox
+			hitbox = ds_list_find_value(hitboxesCreated, i);
+			instance_destroy(hitbox);
+		}
+	}
+}
 
 //Neutral Attack
 function NAttack() {

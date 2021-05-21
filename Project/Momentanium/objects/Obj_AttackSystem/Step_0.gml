@@ -4,8 +4,10 @@
 event_inherited();
 
 //Attack Inputs
-normAttckInp = keyboard_check_pressed(normAttckKey);
-//specAttackInp = keyboard_check_pressed(specAttckKey);
+if (!isDead) { //Disable inputs if dead
+	normAttckInp = keyboard_check_pressed(normAttckKey);
+	//specAttackInp = keyboard_check_pressed(specAttckKey);
+}
 
 /* -- REGEN NON-PERM DAMAGED HEALTH -- */
 currentHealth = Approach(currentHealth, currentPermHealth, regenRate / room_speed);
@@ -33,7 +35,7 @@ if (!isInvincible && !hitCooldown) {
 			
 			//Start hit cooldown timer
 			hitCooldown = true;
-			alarm[2] = hitCooldownTime * room_speed;
+			alarm[3] = hitCooldownTime * room_speed;
 			
 			//Set image scale
 			image_xscale = hitBy.image_xscale * -1;
@@ -41,8 +43,13 @@ if (!isInvincible && !hitCooldown) {
 	}
 }
 
-//Die (for testing)
-if (currentHealth <= 0) instance_destroy();
+//Death
+if (currentHealth <= 0) isDead = true;
+if (isDead) {
+	//Stop all attacks and reset
+	stopAllAttacks();
+	currentAttackState = attackState.idle;
+}
 
 /* -- ATTACKS -- */
 if (currentAttackState == attackState.idle) {

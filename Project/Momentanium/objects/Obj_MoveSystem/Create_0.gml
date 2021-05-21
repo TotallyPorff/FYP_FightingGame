@@ -53,3 +53,8 @@ currentAttackState = attackState.idle;
 //Hit cooldown Variables
 hitCooldown = false;
 hitCooldownTime = 0.25;
+
+//Death variables
+isDead = false;
+alarmSet = false;
+deathTimer = 3; //Seconds
