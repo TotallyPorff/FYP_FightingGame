@@ -27,7 +27,7 @@ neutralAir = baseAttacks.neutralAir;
 maxHealth = 100;
 currentPermHealth = maxHealth; //Current health + permanent Damage
 currentHealth = maxHealth; //Current health + permanent + combo damage
-regenRate = 5;
+regenRate = 2;
 
 function takeDamage(permDamage, comboDamage) {
 	if (!isInvincible) {
