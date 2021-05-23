@@ -1,13 +1,23 @@
 /// @description Movement checks & Collisions
 
 //Player Inputs
-inpLeft = keyboard_check(inpLeftKey);
-inpRight = keyboard_check(inpRightKey);
-inpUp = keyboard_check(inpUpKey);
-inpDown = keyboard_check(inpDownKey);
-inpJump = keyboard_check_pressed(inpJumpKey);
-inpDodge = keyboard_check_pressed(inpDodgeKey);
-inpFF = keyboard_check_pressed(inpDownKey);
+if (isController) {//Controller
+	inpLeft = (gamepad_axis_value(controllerIndex, gp_axislh) < 0);
+	inpRight = (gamepad_axis_value(controllerIndex, gp_axislh) > 0);
+	inpUp = (gamepad_axis_value(controllerIndex, gp_axislv) < 0);
+	inpDown = (gamepad_axis_value(controllerIndex, gp_axislv) > 0);
+	inpJump = gamepad_button_check_pressed(controllerIndex, inpJumpContr);
+	inpDodge = gamepad_button_check_pressed(controllerIndex, inpDodgeContr);
+	inpFF = (gamepad_axis_value(controllerIndex, gp_axislv) > 0);
+} else {//Keyboard
+	inpLeft = keyboard_check(inpLeftKey);
+	inpRight = keyboard_check(inpRightKey);
+	inpUp = keyboard_check(inpUpKey);
+	inpDown = keyboard_check(inpDownKey);
+	inpJump = keyboard_check_pressed(inpJumpKey);
+	inpDodge = keyboard_check_pressed(inpDodgeKey);
+	inpFF = keyboard_check_pressed(inpDownKey);
+}
 
 //Reset Input values
 keyLeft = 0;

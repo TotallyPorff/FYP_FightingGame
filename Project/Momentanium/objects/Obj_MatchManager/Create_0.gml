@@ -29,6 +29,10 @@ for (var i = 0; i < noOfPlayers; i++) {
 	
 	//spawn character
 	currentChar = instance_create_depth(spawnPosX, spawnPosY, 300, Obj_Defaultie);
-	if (i != 0) currentChar.resetControls();
+	currentChar.resetControls();
 	ds_list_add(playerIDList, currentChar);
 }
+
+//Spawn input manager
+inputManager = instance_create_depth(0, 0, 0, Obj_InputManager);
+inputManager.managerID = id;

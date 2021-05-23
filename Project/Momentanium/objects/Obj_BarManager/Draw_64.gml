@@ -1,11 +1,12 @@
-/// @description Draw Damage bars + Winner
+/// @description Draw HUD
 if (initialWaitOver && managerID != noone) {
 	
-	//Draw bar
+	//Loop through all characters
 	for (var i = 0; i < numberOfChars; i++) {
 		//Set character ID to variable
 		currentID = ds_list_find_value(managerID.playerIDList, i);
 		
+		/* -- DRAW DAMAGE BARS -- */
 		//Get the X position
 		barXPos = (barWidth * i) + (barGapSize * (i + 1)) + barEdgeToOrigin;
 		
@@ -27,16 +28,19 @@ if (initialWaitOver && managerID != noone) {
 				//Draw permanent damage
 				damageWidth = (currentID.maxHealth - currentID.currentPermHealth) / currentID.maxHealth //Get decimal
 				damageWidth = damageWidth * damageBarWidth; //Convert decimal to bar width
-				draw_sprite_stretched(Spr_PermDamage, 0, barXPos, barYPos, damageWidth, damageHeight);
-			
+				draw_sprite_stretched(Spr_PermDamage, 0, barXPos, barYPos, damageWidth, damageHeight);		
 			}			
 		}
 		
 		//Draw bar frame
 		draw_sprite(Spr_Bar, 0, barXPos, barYPos);
+		
+		//Draw Player's Colours
+		playerBar = asset_get_index("Spr_BarPlayer" + string(i + 1));
+		draw_sprite(playerBar, 0, barXPos, barYPos);
 	}
 	
-	//Display winner
+	/* -- DISPLAY WINNER -- */
 	if (managerID.isMatchOver) {
 		//Display main text
 		draw_sprite(Spr_WinText, 0, screenWidth / 2, screenHeight / 2);

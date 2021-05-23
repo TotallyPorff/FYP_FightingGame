@@ -5,8 +5,13 @@ event_inherited();
 
 //Attack Inputs
 if (!isDead) { //Disable inputs if dead
-	normAttckInp = keyboard_check_pressed(normAttckKey);
-	//specAttackInp = keyboard_check_pressed(specAttckKey);
+	if (isController) { //Controller
+		normAttckInp = gamepad_button_check_pressed(controllerIndex, normAttckContr);
+		specAttackInp = gamepad_button_check_pressed(controllerIndex, specAttckContr);
+	} else { //keyboard
+		normAttckInp = keyboard_check_pressed(normAttckKey);
+		specAttackInp = keyboard_check_pressed(specAttckKey);
+	}
 }
 
 /* -- REGEN NON-PERM DAMAGED HEALTH -- */

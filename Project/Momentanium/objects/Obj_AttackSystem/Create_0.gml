@@ -8,8 +8,45 @@ charName = "Empty";
 fadeOut = false;
 
 //Attack Keyboard Input
-normAttckKey = ord("J");
-specAttckKey = ord("K");
+normAttckKey = 0;
+specAttckKey = 0;
+
+//Attack Controller Input
+normAttckContr = 0;
+specAttckContr = 0;
+
+//Input functions
+function resetControls() {
+	inputValue = vk_control + ord(">") + ord("E") + ord("Y") + vk_backspace + ord("C");
+	
+	inpLeftKey = inputValue;
+	inpRightKey = inputValue;
+	inpUpKey = inputValue;
+	inpDownKey = inputValue;
+	inpJumpKey = inputValue;
+	inpDodgeKey = inputValue;
+	normAttckKey = inputValue;
+	specAttckKey = inputValue;
+}
+function defaultControllerBinds() {
+	//Set deadzone
+	gamepad_set_axis_deadzone(controllerIndex, contrDeadzone);
+	
+	inpJumpContr = gp_face1;
+	inpDodgeContr = gp_face2;
+	normAttckContr = gp_face3;
+	specAttckContr = gp_face4;
+}
+function defaultKeyBinds() {
+	inpLeftKey = ord("A");
+	inpRightKey = ord("D");
+	inpUpKey = ord("W");
+	inpDownKey = ord("S");
+	inpJumpKey = vk_space;
+	inpDodgeKey = vk_shift;
+	normAttckKey = ord("J");
+	specAttckKey = ord("K");
+}
 
 //Hitbox Variables
 hitbox = noone;
@@ -28,20 +65,6 @@ maxHealth = 100;
 currentPermHealth = maxHealth; //Current health + permanent Damage
 currentHealth = maxHealth; //Current health + permanent + combo damage
 regenRate = 2;
-
-//Reset controls function so that they can't be controlled
-function resetControls() {
-	inputValue = vk_control + ord(">") + ord("E") + ord("Y") + vk_backspace + ord("C");
-	
-	inpLeftKey = inputValue;
-	inpRightKey = inputValue;
-	inpUpKey = inputValue;
-	inpDownKey = inputValue;
-	inpJumpKey = inputValue;
-	inpDodgeKey = inputValue;
-	normAttckKey = inputValue;
-	specAttckKey = inputValue;
-}
 
 function takeDamage(permDamage, comboDamage) {
 	if (!isInvincible) {

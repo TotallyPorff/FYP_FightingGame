@@ -27,12 +27,19 @@ tilemap = layer_tilemap_get_id("CollisionTiles"); //The ID of the collision tile
 deathTilemap = layer_tilemap_get_id("DeathTiles"); //The ID of the death tiles
 
 //Keyboard Input variables
-inpLeftKey = ord("A");
-inpRightKey = ord("D");
-inpUpKey = ord("W");
-inpDownKey = ord("S");
-inpJumpKey = vk_space;
-inpDodgeKey = vk_shift;
+inpLeftKey = 0;
+inpRightKey = 0;
+inpUpKey = 0;
+inpDownKey = 0;
+inpJumpKey = 0;
+inpDodgeKey = 0;
+
+//Controller Input Variables
+inpJumpContr = 0;
+inpDodgeContr = 0;
+contrDeadzone = 0.4;
+isController = false;
+controllerIndex = -1;
 
 //Reset variables
 spawnX = x;
@@ -61,5 +68,5 @@ alarmSet = false;
 deathTimer = 3; //Seconds
 
 //Stocks
-maxStocks = 1;
+maxStocks = 3;
 currentStocks = maxStocks;
