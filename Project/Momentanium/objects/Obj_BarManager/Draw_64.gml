@@ -38,6 +38,13 @@ if (initialWaitOver && managerID != noone) {
 		//Draw Player's Colours
 		playerBar = asset_get_index("Spr_BarPlayer" + string(i + 1));
 		draw_sprite(playerBar, 0, barXPos, barYPos);
+		
+		/* -- DRAW STOCKS -- */
+		for (var j = 0; j < currentID.currentStocks; j++) {
+			stockX = barXPos + (20 * j);
+			stockY = barYPos + 44;
+			draw_sprite(Spr_StockHeart, 0, stockX, stockY);
+		}
 	}
 	
 	/* -- DISPLAY WINNER -- */
