@@ -1,10 +1,10 @@
 /// @description Draw Damage bars
-if (initialWaitOver) {
+if (initialWaitOver && managerID != noone) {
 	
 	//Draw bar
 	for (var i = 0; i < numberOfChars; i++) {
 		//Set character ID to variable
-		currentID = ds_list_find_value(playerIDList, i);
+		currentID = ds_list_find_value(managerID.playerIDList, i);
 		
 		//Get the X position
 		barXPos = (barWidth * i) + (barGapSize * (i + 1)) + barEdgeToOrigin;

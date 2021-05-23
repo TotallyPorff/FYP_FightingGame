@@ -51,7 +51,7 @@ if (!isInvincible && !hitCooldown) {
 
 //Death
 if (currentHealth <= 0) isDead = true;
-if (isDead) {
+if (isDead) {	
 	//Stop all attacks and reset
 	stopAllAttacks();
 	currentAttackState = attackState.idle;

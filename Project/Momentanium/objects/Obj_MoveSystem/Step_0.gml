@@ -183,8 +183,15 @@ if (isDead) {
 	
 	//Set alarm
 	if (!alarmSet) {
-		alarm[2] = deathTimer * room_speed;
-		alarmSet = true;
+		//Manage stocks
+		currentStocks -= 1;
+		if (currentStocks <= 0) {
+			x = 0;
+			y = 0;	
+		} else {
+			alarm[2] = deathTimer * room_speed;
+			alarmSet = true;
+		}
 		
 		//Spawn death effect
 		instance_create_depth(x, y, 150, Obj_DeathEffect);

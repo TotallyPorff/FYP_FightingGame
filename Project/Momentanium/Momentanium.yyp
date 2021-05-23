@@ -1,7 +1,6 @@
 {
   "resources": [
     {"id":{"name":"TS_GrasslandsDeco","path":"tilesets/TS_GrasslandsDeco/TS_GrasslandsDeco.yy",},"order":4,},
-    {"id":{"name":"Obj_PunchingBag","path":"objects/Obj_PunchingBag/Obj_PunchingBag.yy",},"order":1,},
     {"id":{"name":"TSSpr_Grasslands","path":"sprites/TSSpr_Grasslands/TSSpr_Grasslands.yy",},"order":2,},
     {"id":{"name":"Spr_Defaultie_NAir_Hitbox2","path":"sprites/Spr_Defaultie_NAir_Hitbox2/Spr_Defaultie_NAir_Hitbox2.yy",},"order":1,},
     {"id":{"name":"Spr_Defaultie_NAttck","path":"sprites/Spr_Defaultie_NAttck/Spr_Defaultie_NAttck.yy",},"order":0,},
@@ -22,12 +21,14 @@
     {"id":{"name":"Obj_MoveSystem","path":"objects/Obj_MoveSystem/Obj_MoveSystem.yy",},"order":0,},
     {"id":{"name":"Spr_Defaultie_Jumping","path":"sprites/Spr_Defaultie_Jumping/Spr_Defaultie_Jumping.yy",},"order":2,},
     {"id":{"name":"Spr_Defaultie_Stopping","path":"sprites/Spr_Defaultie_Stopping/Spr_Defaultie_Stopping.yy",},"order":5,},
+    {"id":{"name":"Scr_SpawnPoints","path":"scripts/Scr_SpawnPoints/Scr_SpawnPoints.yy",},"order":4,},
     {"id":{"name":"BG_Sky","path":"sprites/BG_Sky/BG_Sky.yy",},"order":1,},
     {"id":{"name":"TSSpr_Death","path":"sprites/TSSpr_Death/TSSpr_Death.yy",},"order":1,},
     {"id":{"name":"Ts_Collision","path":"tilesets/Ts_Collision/Ts_Collision.yy",},"order":2,},
     {"id":{"name":"Spr_Defaultie_Wallhang","path":"sprites/Spr_Defaultie_Wallhang/Spr_Defaultie_Wallhang.yy",},"order":6,},
     {"id":{"name":"Ts_Death","path":"tilesets/Ts_Death/Ts_Death.yy",},"order":3,},
     {"id":{"name":"Spr_DeathOrbSmol","path":"sprites/Spr_DeathOrbSmol/Spr_DeathOrbSmol.yy",},"order":0,},
+    {"id":{"name":"Obj_MatchManager","path":"objects/Obj_MatchManager/Obj_MatchManager.yy",},"order":8,},
     {"id":{"name":"Spr_Defaultie_Idle","path":"sprites/Spr_Defaultie_Idle/Spr_Defaultie_Idle.yy",},"order":1,},
     {"id":{"name":"Spr_Defaultie_HitInAir","path":"sprites/Spr_Defaultie_HitInAir/Spr_Defaultie_HitInAir.yy",},"order":7,},
     {"id":{"name":"Scr_Helpful","path":"scripts/Scr_Helpful/Scr_Helpful.yy",},"order":0,},

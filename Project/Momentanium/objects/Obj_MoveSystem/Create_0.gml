@@ -59,3 +59,7 @@ visible = true;
 isDead = false;
 alarmSet = false;
 deathTimer = 3; //Seconds
+
+//Stocks
+maxStocks = 3;
+currentStocks = maxStocks;

@@ -14,11 +14,11 @@ for (var i = 0; i < ds_list_size(playerChars); i++) {
 	if (instance_exists(playerCharID)) {
 		//If player isnt dead
 		if (!playerCharID.isDead) {
-		existingChars += 1;
+			existingChars += 1;
 		
-		//Add up positions
-		averageXPos += playerCharID.x;
-		averageYPos += playerCharID.y;
+			//Add up positions
+			averageXPos += playerCharID.x;
+			averageYPos += playerCharID.y;
 		}
 	}
 }
@@ -54,20 +54,23 @@ for (var i = 0; i < ds_list_size(playerChars); i++) {
 			char1 = ds_list_find_value(playerChars, i);
 			char2 = ds_list_find_value(playerChars, j);
 			
-			//Check both instances exist
-			if (instance_exists(char1) && instance_exists(char2)) {
+			//Make sure both are alive
+			if (!char1.isDead && !char2.isDead) {
 			
-				//Grab the distance between both instances, making sure it is the absolute value
-				distDiffX = abs(char1.x - char2.x);
-				distDiffY = abs(char1.y - char2.y);
+				//Check both instances exist
+				if (instance_exists(char1) && instance_exists(char2)) {
+			
+					//Grab the distance between both instances, making sure it is the absolute value
+					distDiffX = abs(char1.x - char2.x);
+					distDiffY = abs(char1.y - char2.y);
 				
-				//Check if they are the new max difference
-				if (distDiffX > maxDistDiffX) maxDistDiffX = distDiffX;
-				if (distDiffY > maxDistDiffY) maxDistDiffY = distDiffY;
+					//Check if they are the new max difference
+					if (distDiffX > maxDistDiffX) maxDistDiffX = distDiffX;
+					if (distDiffY > maxDistDiffY) maxDistDiffY = distDiffY;
 			
+				}
 			}
-		}
-		
+		}		
 	}
 }
 

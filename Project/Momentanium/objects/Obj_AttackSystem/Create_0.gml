@@ -29,6 +29,20 @@ currentPermHealth = maxHealth; //Current health + permanent Damage
 currentHealth = maxHealth; //Current health + permanent + combo damage
 regenRate = 2;
 
+//Reset controls function so that they can't be controlled
+function resetControls() {
+	inputValue = vk_control + ord(">") + ord("E") + ord("Y") + vk_backspace + ord("C");
+	
+	inpLeftKey = inputValue;
+	inpRightKey = inputValue;
+	inpUpKey = inputValue;
+	inpDownKey = inputValue;
+	inpJumpKey = inputValue;
+	inpDodgeKey = inputValue;
+	normAttckKey = inputValue;
+	specAttckKey = inputValue;
+}
+
 function takeDamage(permDamage, comboDamage) {
 	if (!isInvincible) {
 		//Deal Damage to the character

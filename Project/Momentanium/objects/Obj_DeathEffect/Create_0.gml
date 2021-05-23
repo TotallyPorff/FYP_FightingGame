@@ -2,4 +2,4 @@
 effectSpeed = 3;
 slowdown = 3;
 distance = 0;
-noOfParticles = 8;
+noOfParticles = 16;
