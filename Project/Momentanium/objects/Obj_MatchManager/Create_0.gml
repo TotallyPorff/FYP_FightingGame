@@ -2,6 +2,8 @@
 
 //Create ds_list of player IDs
 playerIDList = ds_list_create();
+winner = noone;
+isMatchOver = false;
 
 //Grab spawn points
 spawnsList = new roomSpawns();
@@ -16,7 +18,7 @@ barManager = instance_create_depth(0, 0, 0, Obj_BarManager);
 barManager.managerID = id;
 
 //Spawn players
-noOfPlayers = 4;
+noOfPlayers = 2;
 for (var i = 0; i < noOfPlayers; i++) {
 	//Get spawn point
 	spawnPosX = variable_struct_get(roomPlayerSpawns, "xPlayer" + string(i + 1));

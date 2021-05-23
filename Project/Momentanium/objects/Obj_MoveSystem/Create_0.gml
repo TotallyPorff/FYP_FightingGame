@@ -61,5 +61,5 @@ alarmSet = false;
 deathTimer = 3; //Seconds
 
 //Stocks
-maxStocks = 3;
+maxStocks = 1;
 currentStocks = maxStocks;
