@@ -2,7 +2,10 @@
 
 //Create ds_list of player IDs
 playerIDList = ds_list_create();
+
+//Variables
 winner = noone;
+winnerNumber = 1;
 isMatchOver = false;
 
 //Grab spawn points

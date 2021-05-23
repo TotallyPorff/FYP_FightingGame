@@ -1,10 +1,15 @@
+//Get Display stuff
+screenWidth = display_get_gui_width();
+screenHeight = display_get_gui_height();
+
 //Variables
 numberOfChars = 0;
 barGapSize = 0;
 barWidth = 212;
 barEdgeToOrigin = 6;
 barXPos = 0;
-barYPos = display_get_gui_height() - 64;
+barYPos = screenHeight - 64;
+
 damageBarWidth = 200;
 damageWidth = 0;
 damageHeight = 24;

@@ -31,6 +31,7 @@ if (!isMatchOver) {
 			//Check if alive
 			if (currentChar.currentStocks > 0) {
 				winner = currentChar;
+				winnerNumber = i + 1;
 				isMatchOver = true;
 			}
 		}

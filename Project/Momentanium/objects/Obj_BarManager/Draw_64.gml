@@ -1,4 +1,4 @@
-/// @description Draw Damage bars
+/// @description Draw Damage bars + Winner
 if (initialWaitOver && managerID != noone) {
 	
 	//Draw bar
@@ -34,5 +34,16 @@ if (initialWaitOver && managerID != noone) {
 		
 		//Draw bar frame
 		draw_sprite(Spr_Bar, 0, barXPos, barYPos);
-	}	
+	}
+	
+	//Display winner
+	if (managerID.isMatchOver) {
+		//Display main text
+		draw_sprite(Spr_WinText, 0, screenWidth / 2, screenHeight / 2);
+		//Display winner
+		winnerSprite = asset_get_index("Spr_Win" + string(managerID.winnerNumber));
+		draw_sprite(winnerSprite, 0, screenWidth / 2, screenHeight / 2);
+		//Display restart text
+		draw_sprite(Spr_RestartText, 0, screenWidth / 2, (screenHeight / 2) + 200);
+	}
 }
