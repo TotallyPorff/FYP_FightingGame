@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "ManagementCode",
+    "path": "folders/Objects/ManagementCode.yy",
   },
   "resourceVersion": "1.0",
   "name": "Obj_BarManager",

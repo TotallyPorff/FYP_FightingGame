@@ -45,6 +45,26 @@ if (initialWaitOver && managerID != noone) {
 			stockY = barYPos + 44;
 			draw_sprite(Spr_StockHeart, 0, stockX, stockY);
 		}
+		
+		/* -- DISPLAY INPUT REQUESTS -- */
+		if (inputManagerID != noone) {
+			
+			//If currentID matches the input requires
+			if (i == inputManagerID.inputsSet) {
+				//Set position
+				inputX = barXPos + 100;
+				inputY = barYPos + 12;
+				
+				//Check if keyboard input is set
+				if (!inputManagerID.keyboardInputSet) {
+					//Draw text
+					draw_sprite(Spr_InpKeyAndController, 0, inputX, inputY);
+				} else {
+					//Draw text
+					draw_sprite(Spr_InpController, 0, inputX, inputY);
+				}
+			}	
+		}
 	}
 	
 	/* -- DISPLAY WINNER -- */

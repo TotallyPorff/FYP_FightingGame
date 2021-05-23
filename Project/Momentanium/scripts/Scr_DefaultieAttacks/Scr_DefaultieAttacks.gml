@@ -2,8 +2,8 @@
 function DefaultieAttacks() constructor {
 	neutralAttack = {
 		attackName: "NAttck",
-		permDamage: 2,
-		comboDamage: 10,
+		permDamage: 4,
+		comboDamage: 3,
 		xKnockback: 200,
 		yKnockback: -200,
 		numOfAttacks: 2,
@@ -12,7 +12,7 @@ function DefaultieAttacks() constructor {
 	
 	sideAttack = {
 		attackName: "SAttck",
-		permDamage: 5,
+		permDamage: 10,
 		comboDamage: 10,
 		xKnockback: 100,
 		yKnockback: -200,
@@ -22,8 +22,8 @@ function DefaultieAttacks() constructor {
 	
 	neutralAir = {
 		attackName: "NAir",
-		permDamage: 5,
-		comboDamage: 10,
+		permDamage: 10,
+		comboDamage: 7,
 		xKnockback: 200,
 		yKnockback: -400,
 		numOfAttacks: 2,

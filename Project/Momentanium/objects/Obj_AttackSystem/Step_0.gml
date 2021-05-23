@@ -72,10 +72,10 @@ if (currentAttackState == attackState.idle) {
 	/* -- NORMAL ATTACKS -- */
 	if (normAttckInp && touchingFloor) {
 		//check for inputs
-		if (vInput == 1) { //Down
+		if (hInput != 0) { //Side
+			SAttack();		
+		} else if (vInput == 1) { //Down
 			
-		} else if (hInput != 0) { //Side
-			SAttack();
 		} else { //Neutral
 			NAttack();		
 		}
@@ -83,9 +83,9 @@ if (currentAttackState == attackState.idle) {
 	/* -- AERIAL ATTACKS -- */
 	else if (normAttckInp && !touchingFloor && !touchingWall) {
 		//check for inputs
-		if (vInput == 1) { //Down
-			
-		} else if (hInput != 0) { //Side
+		if (hInput != 0) { //Side
+				
+		} else if (vInput == 1) { //Down
 			
 		} else { //Neutral
 			NAir();		

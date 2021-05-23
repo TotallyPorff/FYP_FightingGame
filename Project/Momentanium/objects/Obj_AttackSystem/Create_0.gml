@@ -64,14 +64,14 @@ neutralAir = baseAttacks.neutralAir;
 maxHealth = 100;
 currentPermHealth = maxHealth; //Current health + permanent Damage
 currentHealth = maxHealth; //Current health + permanent + combo damage
-regenRate = 2;
+regenRate = 4;
 
 function takeDamage(permDamage, comboDamage) {
 	if (!isInvincible) {
-		//Deal Damage to the character
-		currentPermHealth = Approach(currentPermHealth, 0, permDamage);
-		currentHealth = currentPermHealth;
-		currentHealth = Approach(currentHealth, 0, comboDamage);
+		//Deal Perm Damage to the character
+		currentPermHealth = Approach(currentPermHealth, 0, permDamage);	
+		//Deal combo damage
+		currentHealth = Approach(currentHealth, 0, comboDamage + permDamage);
 	}
 }
 function takeKnockback(xKnockback, yKnockback) { //Parameters are the max knockback dealt

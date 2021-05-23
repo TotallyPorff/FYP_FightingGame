@@ -16,6 +16,8 @@ damageHeight = 24;
 
 //ID of match manager
 managerID = noone;
+//ID of Input manager
+inputManagerID = noone;
 
 //Timer for activating everything so that it doesn't try to grab IDs that arent there
 initialWaitOver = false;

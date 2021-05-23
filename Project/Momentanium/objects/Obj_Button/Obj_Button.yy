@@ -24,11 +24,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "ManagementCode",
-    "path": "folders/Objects/ManagementCode.yy",
+    "name": "StartRoomCode",
+    "path": "folders/Objects/StartRoomCode.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Obj_InputManager",
+  "name": "Obj_Button",
   "tags": [],
   "resourceType": "GMObject",
 }

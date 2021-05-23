@@ -21,7 +21,7 @@ barManager = instance_create_depth(0, 0, 0, Obj_BarManager);
 barManager.managerID = id;
 
 //Spawn players
-noOfPlayers = 2;
+noOfPlayers = global.playerCount;
 for (var i = 0; i < noOfPlayers; i++) {
 	//Get spawn point
 	spawnPosX = variable_struct_get(roomPlayerSpawns, "xPlayer" + string(i + 1));
@@ -36,3 +36,4 @@ for (var i = 0; i < noOfPlayers; i++) {
 //Spawn input manager
 inputManager = instance_create_depth(0, 0, 0, Obj_InputManager);
 inputManager.managerID = id;
+barManager.inputManagerID = inputManager;
