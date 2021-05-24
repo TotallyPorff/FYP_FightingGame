@@ -17,6 +17,7 @@ if (!isDead) { //Disable inputs if dead
 /* -- REGEN NON-PERM DAMAGED HEALTH -- */
 currentHealth = Approach(currentHealth, currentPermHealth, regenRate / room_speed);
 
+/* -- GETTING HIT -- */
 //Check if not invincible
 if (!isInvincible && !hitCooldown) {
 	
@@ -27,8 +28,22 @@ if (!isInvincible && !hitCooldown) {
 		//Check if it hasn't been hit by this before
 		if (ds_list_find_index(beenHitBy, hitBy) == -1) {
 			
-			//take damage and knockback
-			takeDamage(hitBy.attackStats.permDamage, hitBy.attackStats.comboDamage);
+			/* -- DAMAGE -- */
+			//Enemy speed & damage boost
+			enemySpeed = sqrt(sqr(hitBy.hitboxCreator.hSpeed) + sqr(hitBy.hitboxCreator.vSpeed));
+			damageBoostDec = enemySpeed / 1000;
+			if (damageBoostDec > 1) damageBoostDec = 1;
+			
+			//Perm damage
+			dealDamagePerm = hitBy.attackStats.permDamage;
+			dealDamagePerm += dealDamagePerm * (damageBoostDec / 2);
+			
+			//Combo damage
+			dealDamageCombo = hitBy.attackStats.comboDamage;
+			dealDamageCombo += dealDamageCombo * (damageBoostDec / 2);
+			takeDamage(dealDamagePerm, dealDamageCombo);
+			
+			/* -- KNOCKBACK -- */
 			if (hitBy.dealKnockback) {
 				//Calculate Knockback
 				dealKnockX = hitBy.hitboxCreator.hSpeed + (hitBy.attackStats.xKnockback * hitBy.image_xscale);
@@ -75,7 +90,7 @@ if (currentAttackState == attackState.idle) {
 		if (hInput != 0) { //Side
 			SAttack();		
 		} else if (vInput == 1) { //Down
-			
+			DAttack();
 		} else { //Neutral
 			NAttack();		
 		}
@@ -102,6 +117,11 @@ switch (currentAttackState) {
 		break;
 	case attackState.sAttack:
 		if (SAttack()) {
+			currentAttackState = attackState.idle;
+		}
+		break;
+	case attackState.dAttack:
+		if (DAttack()) {
 			currentAttackState = attackState.idle;
 		}
 		break;

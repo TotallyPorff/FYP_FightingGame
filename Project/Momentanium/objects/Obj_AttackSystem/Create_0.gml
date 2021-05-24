@@ -57,14 +57,15 @@ hitboxesCreated = ds_list_create();
 baseAttacks = new DefaultieAttacks();
 neutralAttack = baseAttacks.neutralAttack;
 sideAttack = baseAttacks.sideAttack;
-
+downAttack = baseAttacks.downAttack;
+//AerialAttacks
 neutralAir = baseAttacks.neutralAir;
 
 //Health & Knockback
 maxHealth = 100;
 currentPermHealth = maxHealth; //Current health + permanent Damage
 currentHealth = maxHealth; //Current health + permanent + combo damage
-regenRate = 4;
+regenRate = 3;
 
 function takeDamage(permDamage, comboDamage) {
 	if (!isInvincible) {
@@ -193,6 +194,25 @@ function SAttack() {
 	
 	//Create sprites/Complete Attack
 	if (attackSprite(sideAttack)) {
+		return true;
+	}
+	
+	return false;
+}
+//Down Attack
+function DAttack() {
+	//Set attack State
+	if (currentAttackState != attackState.dAttack) {
+		currentAttackState = attackState.dAttack;
+	}
+	
+	//Apply movement
+	if (image_index == 4) {
+		vSpeed = -500;
+	}
+	
+	//Create sprites/Complete Attack
+	if (attackSprite(downAttack)) {
 		return true;
 	}
 	
