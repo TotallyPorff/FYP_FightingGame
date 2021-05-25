@@ -21,7 +21,7 @@ cameraHeightMin = 360;
 cameraWidth = cameraWidthMax;
 cameraHeight = cameraHeightMax;
 camera_set_view_size(cameraID, cameraWidth, cameraHeight);
-borderPerc = 20;
+borderPerc = 30;
 
 //Set border maximums so camera can only view in certain area
 maxBorderRight = cameraXCentre + (cameraWidthMax / 2);

@@ -99,9 +99,9 @@ if (currentAttackState == attackState.idle) {
 	else if (normAttckInp && !touchingFloor && !touchingWall) {
 		//check for inputs
 		if (hInput != 0) { //Side
-				
+			SAir();
 		} else if (vInput == 1) { //Down
-			
+			DAir();
 		} else { //Neutral
 			NAir();		
 		}
@@ -127,6 +127,16 @@ switch (currentAttackState) {
 		break;
 	case attackState.nAir:
 		if (NAir()) {
+			currentAttackState = attackState.idle;
+		}
+		break;
+	case attackState.sAir:
+		if (SAir()) {
+			currentAttackState = attackState.idle;
+		}
+		break;
+	case attackState.dAir:
+		if (DAir()) {
 			currentAttackState = attackState.idle;
 		}
 		break;

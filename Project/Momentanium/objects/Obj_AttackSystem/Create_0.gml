@@ -60,6 +60,8 @@ sideAttack = baseAttacks.sideAttack;
 downAttack = baseAttacks.downAttack;
 //AerialAttacks
 neutralAir = baseAttacks.neutralAir;
+sideAir = baseAttacks.sideAir;
+downAir = baseAttacks.downAir;
 
 //Health & Knockback
 maxHealth = 100;
@@ -232,6 +234,53 @@ function NAir() {
 	
 	//Apply Movement
 	if (vSpeed > charMoveStruct.maxVSpeed / 2) vSpeed = charMoveStruct.maxVSpeed / 2;
+	
+	return false;
+}
+//Side Air
+function SAir() {
+	//Set attack State
+	if (currentAttackState != attackState.sAir) {
+		currentAttackState = attackState.sAir;
+	}
+	
+	//Create sprites/Complete Attack
+	if (attackSprite(sideAir)) {
+		return true;
+	}
+	
+	//Apply Movement
+	if (vSpeed > charMoveStruct.maxVSpeed / 4 && image_index < 1) {
+		vSpeed = charMoveStruct.maxVSpeed / 4;
+	} else if (image_index == 1) {
+		vSpeed = -400;
+		hSpeed = 300 * image_xscale;
+	}
+	
+	return false;
+}
+//Down Air
+function DAir() {
+	//Set attack State
+	if (currentAttackState != attackState.dAir) {
+		currentAttackState = attackState.dAir;
+	
+	}
+	
+	//Create sprites/Complete Attack
+	if (attackSprite(downAir)) {
+		return true;
+	}
+	
+	//Control animation
+	if (image_index == 4) {
+		if (!touchingFloor) {
+			image_speed = 0;
+			image_index = 4;
+		} else {
+			image_speed = 1;
+		}
+	}
 	
 	return false;
 }

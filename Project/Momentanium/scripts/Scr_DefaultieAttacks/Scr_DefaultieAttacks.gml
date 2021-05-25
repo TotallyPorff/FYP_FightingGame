@@ -39,4 +39,24 @@ function DefaultieAttacks() constructor {
 		numOfAttacks: 1,
 		KBOnLast: false
 	}
+	
+	sideAir = {
+		attackName: "SAir",
+		permDamage: 8,
+		comboDamage: 6,
+		xKnockback: 300,
+		yKnockback: -200,
+		numOfAttacks: 1,
+		KBOnLast: false
+	}
+	
+	downAir = {
+		attackName: "DAir",
+		permDamage: 12,
+		comboDamage: 4,
+		xKnockback: 200,
+		yKnockback: -100,
+		numOfAttacks: 1,
+		KBOnLast: false
+	}
 }

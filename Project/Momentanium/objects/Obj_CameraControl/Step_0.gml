@@ -22,17 +22,13 @@ for (var i = 0; i < ds_list_size(playerChars); i++) {
 		}
 	}
 }
-if (existingChars != 0) {
-	//Finish average calculation
-	averageXPos = averageXPos / existingChars;
-	averageYPos = averageYPos / existingChars;
-	
-} else {
-	//Set average to the centre
-	averageXPos = cameraXCentre;
-	averageYPos = cameraYCentre;
-	
-}
+//Add centre of room to average pos
+existingChars += 1;
+averageXPos += cameraXCentre;
+averageYPos += cameraYCentre;
+//Finish average calculation
+averageXPos = averageXPos / existingChars;
+averageYPos = averageYPos / existingChars;
 
 //Set camera target
 cameraXTarget = averageXPos;
